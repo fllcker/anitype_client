@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+:root {
+  --accent_color: #1FDF64;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +11,273 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background: #111;
+  color: #d1d1d1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+* {
+  font-family: 'Manrope', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input {
+  padding: 12px 17px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+}
+
+button {
+  padding: 12px 50px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  
+  transition: .2s;
+  cursor: pointer;
+}
+
+button:hover {
+  color: black;
+  background: var(--accent_color);
+}
+
+.header {
+  padding: 15px 40px;
+  background: #222;
+
+  margin-bottom: 100px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  color: #b3b3b3;
+  font-weight: bold;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: .2s;
+}
+
+a:hover {
+  color: white;
+}
+
+a.active {
+  color: var(--accent_color);
+}
+
+.search_input {
+  padding: 9px 20px;
+  margin-left: 20px;
+
+  background: transparent;
+  border: 1px solid #696969;
+  color: #b6b6b6;
+
+  transition: .2s;
+}
+
+.search_input::placeholder {
+  color: #b6b6b6;
+}
+
+.search_input:focus {
+  color: #dcdcdc;
+  border: 1px solid #9b9b9b;
+}
+
+h1 {
+  color: white;
+  width: 100%;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.page_content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search_page_input {
+  width: 95%;
+}
+
+.anime_list {
+  margin-top: 40px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+
+.anime_line {
+  background: #222;
+  width: 100%;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  max-height: 250px;
+}
+
+.anime_line_poster {
+  background: blue;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.anime_line_poster_image {
+  max-width: 200px;
+}
+
+.anime_line_info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  padding: 20px 30px;
+
+}
+
+.anime_line_info__title {
+  margin: 0;
+
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.anime_line_info__text {
+  margin-top: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+
+  color: #9b9b9b;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.other_names {
+  color: #707070;
+  margin-left: 20px;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.span_separator {
+  margin-left: 15px;
+  margin-right: 15px;
+
+  width: 5px;
+  height: 5px;
+  padding: 1px;
+  border-radius: 50%;
+
+  margin-top: 3px;
+
+  background: #9b9b9b;
+
+}
+
+.anime_line_info__text {
+  display: flex;
+  align-items: center;
+}
+
+.anime_line_info__desc {
+  font-size: 14px;
+  overflow: hidden;
+
+
+}
+
+.anime_line_open {
+  margin-top: 15px;
+
+  width: 150px;
+  text-align: center;
+  padding: 12px 0;
+
+  margin-bottom: 0;
+}
+
+.anime_line_button {
+  display: flex;
+  justify-content: right;
+}
+
+.release_page_image {
+  border-radius: 10px;
+}
+
+.release_content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+}
+
+.release_content_info {
+  margin-left: 50px;
+}
+
+.episodes_content {
+  margin-top: 30px;
+
+  width: 100%;
+}
+
+.episode_line {
+  padding: 5px 35px;
+
+  border: 1px solid #222;
+  border-radius: 20px;
+
+  margin-bottom: 10px;
+
+  transition: .2s;
+  cursor: pointer;
+}
+
+.episode_line:hover {
+  background: #171717;
+
+}
+
