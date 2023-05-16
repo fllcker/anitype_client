@@ -22,3 +22,28 @@ export function compressString(str, maxLength = 450) {
 
     return str.substring(0, maxLength) + "..."; // Обрезает строку и добавляет многоточие в конце
 }
+
+export function getStringOfQualities(obj) {
+    let result= []
+
+    if (obj?.fhd)
+        result.push('1080')
+
+    if (obj?.hd)
+        result.push('720')
+
+    if (obj?.sd)
+        result.push('480')
+
+    return result.join(', ')
+}
+
+export function makeNormalList(obj) {
+    let array = []
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            array.push(obj[key])
+        }
+    }
+    return array;
+}

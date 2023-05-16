@@ -55,6 +55,12 @@ button:hover {
   background: var(--accent_color);
 }
 
+button:disabled:hover {
+  background: #545454;
+  color: #40404a;
+  cursor: help;
+}
+
 .header {
   padding: 15px 40px;
   background: #222;
@@ -256,6 +262,9 @@ h1 {
 
 .release_content_info {
   margin-left: 50px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .episodes_content {
@@ -265,7 +274,7 @@ h1 {
 }
 
 .episode_line {
-  padding: 5px 35px;
+  padding: 0 35px;
 
   border: 1px solid #222;
   border-radius: 20px;
@@ -274,6 +283,10 @@ h1 {
 
   transition: .2s;
   cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .episode_line:hover {
@@ -281,3 +294,153 @@ h1 {
 
 }
 
+.release_content_info_down {
+  margin-top: 30px;
+}
+
+.span_button {
+  font-size: 13px;
+  color: #757575;
+  cursor: pointer;
+  margin-right: 20px;
+
+  transition: .2s;
+}
+
+.span_button:hover {
+  color: #a9a9a9;
+
+
+}
+
+.episode_line_qualities {
+  color: #9b9b9b;
+  font-size: 12px;
+}
+
+.episodes_count {
+  margin-left: 20px;
+  color: #9b9b9b;
+}
+
+.reacthlsplayer2 {
+  height: 100vh;
+  width: 85%;
+}
+
+.player_page {
+  display: flex;
+  justify-content: space-between;
+
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.player_page_controls {
+  background: #111;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 25px;
+}
+
+.player_page_controls button {
+  margin-top: 20px;
+
+  padding: 12px 30px;
+
+}
+
+.controls_episode_title {
+  color: #97af9f;
+
+  word-break: break-all;
+}
+
+.controls_title {
+  margin-right: 20px;
+
+
+}
+
+.inv_sep {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.right_episodes_list {
+  overflow: scroll;
+}
+
+.episode_line_active {
+  background: #eeeeee;
+  color: black;
+}
+
+.episode_line_active:hover {
+  background: #ffffff;
+
+}
+
+.last_releases_items {
+  display: flex;
+  margin-top: 40px;
+
+  flex-wrap: wrap;
+
+}
+
+.last_release_v {
+  border-radius: 20px;
+  overflow: hidden;
+
+  margin: 10px;
+  transition: .2s;
+
+  cursor: pointer;
+
+  color: transparent;
+
+
+}
+
+.last_release_v:hover {
+  color: #989898;
+
+}
+
+.last_release_v:hover img {
+  opacity: 0.1;
+  color: red;
+}
+
+.last_release_v_poster {
+  max-width: 250px;
+  height: 100%;
+
+  transition: .2s;
+}
+
+.last_release_text {
+  position: absolute;
+  margin: 30px;
+  max-width: 190px;
+  word-break: break-word;
+
+  max-height: 290px;
+  overflow-y: hidden;
+
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.last_release_text_desc {
+  font-weight: normal;
+  margin-top: 5px;
+
+  font-size: 14px;
+}

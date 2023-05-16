@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {useNavigate, useParams} from "react-router-dom";
+import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import {api_url, compressString, getPoster} from "../utils/anilibria";
+import {api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../utils/anilibria";
+import EpisodeLine from "../components/EpisodeLine";
+import Header from "../components/Header";
 
 const ReleasePage = () => {
     const params = useParams();
@@ -22,39 +24,53 @@ const ReleasePage = () => {
     }, [params?.id])
 
     return (
-        <div className="page">
-            <div className="page_content">
-                <div className="release_content">
-                    <div className="release_content_poster">
-                        <img src={getPoster(anime_info?.posters?.small?.url)} alt="poster" className="release_page_image"/>
+        <>
+            <Header/>
+            <div className="page">
+                <div className="page_content">
+                    <div className="release_content">
+                        <div className="release_content_poster">
+                            <img src={getPoster(anime_info?.posters?.small?.url)} alt="poster" className="release_page_image"/>
+                        </div>
+                        <div className="release_content_info">
+                            <div className="release_content_info_upper">
+                                <h1>{anime_info?.names?.ru}</h1>
+
+                                <p className="anime_line_info__text">
+                                    <span>{anime_info?.type?.full_string}</span>
+                                    <div className="span_separator"></div>
+                                    <span>{anime_info?.genres?.join(', ')}</span>
+                                </p>
+
+                                <p className="anime_line_info__text anime_line_info__desc">
+                                    {anime_info?.description}
+                                </p>
+                            </div>
+
+                            <div className="release_content_info_down">
+                                <span className="span_button">Добавить в избранное</span>
+                                <span className="span_button">Отметить просмотренным</span>
+                            </div>
+                        </div>
                     </div>
-                    <div className="release_content_info">
-                        <h1>{anime_info?.names?.ru}</h1>
 
-                        <p className="anime_line_info__text">
-                            <span>{anime_info?.type?.full_string}</span>
-                            <div className="span_separator"></div>
-                            <span>{anime_info?.genres?.join(', ')}</span>
-                        </p>
+                    <div className="episodes_content">
+                        <h1>Эпизоды
+                            <span className="episodes_count">{anime_info?.player?.episodes?.last}</span>
+                        </h1>
 
-                        <p className="anime_line_info__text anime_line_info__desc">
-                            {anime_info?.description}
-                        </p>
-                    </div>
-                </div>
+                        {
+                            makeNormalList(anime_info?.player?.list).map(el => <EpisodeLine key={el.episode} index={el.episode} qualities={getStringOfQualities(el?.hls)}/>)
 
-                <div className="episodes_content">
-                    <h1>Эпизоды</h1>
-                    <div className="episode_line">
-                        <p>Эпизод 1</p>
-                    </div>
 
-                    <div className="episode_line">
-                        <p>Эпизод 2</p>
+                            //
+                            //
+                        }
+
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

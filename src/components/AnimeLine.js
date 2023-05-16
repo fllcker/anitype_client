@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {compressString, getPoster} from "../utils/anilibria";
+import {useNavigate} from "react-router-dom";
 
 const AnimeLine = ({anime_info}) => {
+    const nav = useNavigate()
+
     return (
         <div className="anime_line">
             <div className="anime_line_poster">
@@ -28,7 +31,7 @@ const AnimeLine = ({anime_info}) => {
                 </p>
 
                 <div className="anime_line_button">
-                    <button className="anime_line_open">Смотреть</button>
+                    <button className="anime_line_open" onClick={() => nav('/release/' + anime_info?.id)}>Смотреть</button>
 
                 </div>
             </div>
