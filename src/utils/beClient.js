@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const beUrl = 'http://localhost:8080/'
+export const beUrl = 'https://anitypes.site/'
 
 export function auth(username, password, type = 'login') {
     return axios({
