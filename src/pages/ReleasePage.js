@@ -4,12 +4,17 @@ import axios from "axios";
 import {api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../utils/anilibria";
 import EpisodeLine from "../components/EpisodeLine";
 import Header from "../components/Header";
+import {useCookies} from "react-cookie";
+import {changeFav, getFavStatus} from "../utils/beClient";
+import Footer from "../components/Footer";
 
 const ReleasePage = () => {
     const params = useParams();
     const nav = useNavigate();
+    const [cookies] = useCookies(['access'])
 
     const [anime_info, setAnimeInfo] = useState({})
+    const [faved, setFaved] = useState(false)
 
     useEffect(() => {
         axios({
@@ -21,6 +26,11 @@ const ReleasePage = () => {
                 setAnimeInfo(r.data)
             })
             .catch(e => nav('/search'))
+
+        if (cookies.access) {
+            getFavStatus(cookies.access, params?.id)
+                .then(res => setFaved(res.data))
+        }
     }, [params?.id])
 
     return (
@@ -48,8 +58,13 @@ const ReleasePage = () => {
                             </div>
 
                             <div className="release_content_info_down">
-                                <span className="span_button">Добавить в избранное</span>
-                                <span className="span_button">Отметить просмотренным</span>
+                                {
+                                    cookies.access &&
+                                    <>
+                                        <span className="span_button" onClick={() => changeFav(cookies.access, params?.id, !faved, setFaved)}>{faved ? 'Убрать из избранного' : 'Добавить в избранное'}</span>
+                                        <span className="span_button">Отметить просмотренным</span>
+                                    </>
+                                }
                             </div>
                         </div>
                     </div>
@@ -70,6 +85,8 @@ const ReleasePage = () => {
                     </div>
                 </div>
             </div>
+
+            <Footer/>
         </>
     );
 };

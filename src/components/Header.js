@@ -1,8 +1,10 @@
 import React from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import HeaderSearch from "./HeaderSearch";
+import {useCookies} from "react-cookie";
 
 const Header = ({selected = ''}) => {
+    let [cookies] = useCookies(['username'])
 
     return (
         <>
@@ -15,8 +17,13 @@ const Header = ({selected = ''}) => {
                     <HeaderSearch/>
                 </div>
                 <div className="header_right">
-                    <Link to="/" className={selected === 'fav' && 'active'}>Избранное</Link>
-                    <Link to="/" className={selected === 'fav' && 'active'}>Аккаунт</Link>
+                    <Link to="/favourite" className={selected === 'fav' && 'active'}>Избранное</Link>
+
+                    {
+                        cookies.username ?
+                            <Link to="/account" className={selected === 'auth' && 'active'}>Аккаунт ({cookies.username})</Link> :
+                            <Link to="/auth" className={selected === 'auth' && 'active'}>Авторизация</Link>
+                    }
                 </div>
             </div>
         </>

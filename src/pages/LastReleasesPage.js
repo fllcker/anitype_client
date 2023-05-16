@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Header from "../components/Header";
 import {getLastReleases} from "../utils/alClient";
 import LastReleaseV from "../components/LastReleaseV";
+import Footer from "../components/Footer";
 
 const LastReleasesPage = () => {
     const [releases, setReleases] = useState([])
@@ -18,7 +19,7 @@ const LastReleasesPage = () => {
                 <div className="page_content">
                     <h1>Последние релизы</h1>
 
-                    <div className="last_releases_items">
+                    <div className="releases_items">
                         {
                             releases?.map(el => <LastReleaseV anime_info={el}/>)
                         }
@@ -26,6 +27,7 @@ const LastReleasesPage = () => {
                 </div>
             </div>
 
+            <Footer/>
         </>
     );
 };

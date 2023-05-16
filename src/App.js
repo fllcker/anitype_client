@@ -6,6 +6,8 @@ import PlayerPage from "./pages/PlayerPage";
 import MainPage from "./pages/MainPage";
 import LastReleasesPage from "./pages/LastReleasesPage";
 import RandomReleaseFunc from "./pages/RandomReleaseFunc";
+import AuthPage from "./pages/AuthPage";
+import FavPage from "./pages/FavPage";
 
 function App() {
     return (
@@ -26,6 +28,8 @@ function App() {
 
                 <Route path="/last" element={<LastReleasesPage/>}/>
                 <Route path="/random" element={<RandomReleaseFunc/>}/>
+                <Route path="/auth" element={<AuthPage/>}/>
+                <Route path="/favourite" element={<FavPage/>}/>
                 <Route path="/" element={<MainPage/>}/>
 
             </Routes>

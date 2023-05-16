@@ -15,3 +15,11 @@ export function getRandomReleaseId() {
         method: 'get'
     })
 }
+
+export function getCurrentReleases(fun, releasesString) {
+    axios({
+        url: api_url + 'title/list?id_list=' + releasesString,
+        method: 'get'
+    })
+        .then(r => fun(r.data))
+}

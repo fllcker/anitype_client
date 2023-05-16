@@ -4,6 +4,8 @@ import {getSearchUrl} from "../utils/anilibria";
 import AnimeLine from "../components/AnimeLine";
 import Header from "../components/Header";
 import {useParams} from "react-router-dom";
+import Footer from "../components/Footer";
+import LastReleaseV from "../components/LastReleaseV";
 
 const SearchPage = () => {
     let params = useParams()
@@ -49,15 +51,21 @@ const SearchPage = () => {
             <div className="page">
                 <div className="page_content">
                     <h1>Поиск</h1>
-                    <input type="text" className="search_page_input" placeholder="Введите запрос" onKeyDown={handleKeyDown} onBlur={goSearch} value={query} onChange={e => setQuery(e.target.value)}/>
+                    <input type="text" className="search_page_input" placeholder="Введите запрос"
+                           onKeyDown={handleKeyDown} onBlur={goSearch} value={query}
+                           onChange={e => setQuery(e.target.value)}/>
 
-                    <div className="anime_list">
+
+                    <div className="releases_items">
                         {
-                            result?.list?.map(e => <AnimeLine anime_info={e} key={e.id}/>)
+                            // result?.list?.map(e => <AnimeLine anime_info={e} key={e.id}/>)     | anime_list
+                            result?.list?.map(e => <LastReleaseV anime_info={e} key={e.id}/>)
                         }
                     </div>
+
                 </div>
             </div>
+            <Footer/>
         </>
     );
 };

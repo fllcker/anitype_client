@@ -5,10 +5,8 @@ export const ani_url = 'https://anilibria.tv/'
 export const api_url = 'https://api.anilibria.tv/v3/'
 
 
-export const search_url = api_url + 'title/search?search='
-
-export const getSearchUrl = (query) => {
-    return search_url + query
+export const getSearchUrl = (query, limit = 20) => {
+    return api_url + 'title/search?search=' + query + '&items_per_page=' + limit
 }
 
 export const getPoster = (url) => {

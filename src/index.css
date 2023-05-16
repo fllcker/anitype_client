@@ -73,6 +73,8 @@ button:disabled:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  z-index: 3;
 }
 
 a {
@@ -122,6 +124,7 @@ h1 {
 .page {
   display: flex;
   justify-content: center;
+
 }
 
 .page_content {
@@ -129,6 +132,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .search_page_input {
@@ -387,12 +391,18 @@ h1 {
 
 }
 
-.last_releases_items {
+.releases_items {
   display: flex;
   margin-top: 40px;
 
+  max-width: 100%;
   flex-wrap: wrap;
 
+  width: max-content;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 0 30px;
 }
 
 .last_release_v {
@@ -446,4 +456,123 @@ h1 {
   margin-top: 5px;
 
   font-size: 14px;
+}
+
+.auth_page_content {
+  max-width: 300px;
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth_page_title {
+  width: max-content;
+}
+
+.auth_page_input {
+  width: 220px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  background: white;
+}
+
+.auth_page_button {
+  margin-top: 10px;
+  background: white;
+}
+
+.auth_span_button {
+  text-align: center;
+
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.auth_buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth_page_button2 {
+  padding: 12px 30px;
+  font-size: 11px;
+
+  color: #d9d9d9;
+  background: transparent;
+  border: 1px solid #919191;
+
+  margin-top: 15px;
+}
+
+.auth_page_button2:hover {
+  color: #d9d9d9;
+  background: transparent;
+  border: 1px solid #bebebe;
+}
+
+.error_p {
+  color: #ff4c4c;
+}
+
+.error_block {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+
+  margin-top: -300px;
+  transition: .2s;
+}
+
+.error_block_show {
+  margin-top: -30px;
+}
+
+.error_block_item {
+  padding: 12px 30px;
+  border-radius: 10px;
+
+  background: #ff4c4c;
+  color: white;
+}
+
+.favs_releases_items {
+  width: 100%;
+}
+
+.main_page_title {
+  font-size: 70px;
+  margin-bottom: 5px;
+}
+
+.backgroundvideo{
+  width: 100%;
+  position: absolute;
+  top: -100px;
+  z-index: -1;
+
+  object-fit: cover;
+
+  overflow: hidden;
+  filter: brightness(0.7);
+}
+
+.main_page_desc {
+  width: 100%;
+  margin-top: 0;
+}
+
+.go_reg {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.footer {
+  margin-top: 100px;
 }
