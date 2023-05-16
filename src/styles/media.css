@@ -1,0 +1,75 @@
+@media (max-width: 1200px) {
+    .backgroundvideo {
+        height: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .no1000 {
+        display: none;
+    }
+
+    .header_mob_search {
+        display: initial;
+    }
+
+    .header_search_mobile_no_display {
+        display: none;
+    }
+}
+
+@media (max-width: 750px) {
+    .header_left, .header_right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    a {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .main_page_title{
+        font-size: 50px;
+    }
+
+    .error_block {
+        margin-top: -330px;
+    }
+
+    .error_block_show {
+        margin-top: -15px;
+    }
+
+    .page_content {
+        width: 80%;
+    }
+
+    .last_release_v {
+        margin: 10px 0 10px 0;
+
+    }
+
+    .last_release_v_poster {
+        max-width: 100%;
+    }
+
+    .player_pae_controls_buttons {
+        flex-direction: column;
+    }
+
+    .player_pae_controls_buttons button {
+        margin-top: 7px;
+        margin-bottom: 7px;
+
+        width: 100%;
+    }
+
+    .release_content {
+        flex-direction: column;
+    }
+
+    .release_content_info {
+        margin-left: 0;
+    }
+}

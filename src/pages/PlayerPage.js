@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import {api_url, makeNormalList} from "../utils/anilibria";
+import {api_url, compressString, makeNormalList} from "../utils/anilibria";
 import ReactHlsPlayer from "react-hls-player";
 import EpisodeLine from "../components/EpisodeLine";
 import EpisodeLineRight from "../components/EpisodeLineRight";
@@ -58,6 +58,27 @@ const PlayerPage = () => {
 
     return (
         <div className="player_page">
+            <div className="player_page_controls">
+
+                <h1>
+                    <span className="controls_title">{compressString(animeTitle, 35)}</span>
+                    <span className="controls_episode_title">{params.episode}/{episodes.length}</span>
+                </h1>
+
+
+
+
+                {/*<div className="inv_sep"></div>*/}
+
+                {/*<div className="right_episodes_list">*/}
+                {/*    {*/}
+                {/*        episodes.map(eps => <EpisodeLineRight releaseId={params.id} index={eps.episode} active={eps.episode == params.episode}/>)*/}
+                {/*    }*/}
+                {/*</div>*/}
+
+
+            </div>
+
             <ReactHlsPlayer
                 src={videoSrc}
                 autoPlay={false}
@@ -66,28 +87,13 @@ const PlayerPage = () => {
                 height="100vh"
                 preload={'auto'}
             />
-            <div className="player_page_controls">
 
-                <h1>
-                    <span className="controls_title">{animeTitle}</span>
-                    <span className="controls_episode_title">{params.episode}/{episodes.length}</span>
-                </h1>
-
-                <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode - 1))} disabled={params.episode == 1}>Предыдущий эпизод</button>
-                <button onClick={() => nav('/release/' + params.id)}>Назад к релизу</button>
-                <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode + 1))} disabled={params.episode == episodes.length}>Следующий эпизод</button>
-
-                <div className="inv_sep"></div>
-
-                <div className="right_episodes_list">
-                    {
-                        episodes.map(eps => <EpisodeLineRight releaseId={params.id} index={eps.episode} active={eps.episode == params.episode}/>)
-                    }
-
-
+            <div className="player_page_controls player_page_controls_down">
+                <div className="player_pae_controls_buttons">
+                    <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode - 1))} disabled={params.episode == 1}>Предыдущий эпизод</button>
+                    <button onClick={() => nav('/release/' + params.id)}>Назад к релизу</button>
+                    <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode + 1))} disabled={params.episode == episodes.length}>Следующий эпизод</button>
                 </div>
-
-
             </div>
         </div>
     );
