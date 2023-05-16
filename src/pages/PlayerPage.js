@@ -10,6 +10,7 @@ const PlayerPage = () => {
     let params = useParams()
 
     let [videoSrc, setVideoSrc] = useState('')
+    let [animeTitle, setAnimeTitle] = useState('')
 
     let [episodes, setEpisodes] = useState([])
     let nav = useNavigate()
@@ -22,6 +23,7 @@ const PlayerPage = () => {
             method: 'get'
         })
             .then(r => {
+                setAnimeTitle(r.data.names.ru)
                 let ep = r.data.player?.list[params.episode];
                 setEpisodes(makeNormalList(r?.data?.player?.list))
 
@@ -67,7 +69,7 @@ const PlayerPage = () => {
             <div className="player_page_controls">
 
                 <h1>
-                    <span className="controls_title">Токийский гуль</span>
+                    <span className="controls_title">{animeTitle}</span>
                     <span className="controls_episode_title">{params.episode}/{episodes.length}</span>
                 </h1>
 
