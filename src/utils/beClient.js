@@ -43,3 +43,7 @@ export function changeFav(token, releaseId, status = true, fun) {
     })
         .then(e => fun(status))
 }
+
+export function test123() {
+
+}
