@@ -3,29 +3,26 @@ import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import {api_url, compressString, makeNormalList} from "../utils/anilibria";
 import ReactHlsPlayer from "react-hls-player";
-import EpisodeLine from "../components/EpisodeLine";
-import EpisodeLineRight from "../components/EpisodeLineRight";
 
 const PlayerPage = () => {
     const videoRef = useRef();
 
     let params = useParams()
-
-    let [videoSrc, setVideoSrc] = useState('')
-    let [animeTitle, setAnimeTitle] = useState('')
-
-    let [episodes, setEpisodes] = useState([])
     let nav = useNavigate()
+
+    // anime infos
+    let [anime_info, setAnimeInfo] = useState({})
+    let [videoSrc, setVideoSrc] = useState('')
+    let [episodes, setEpisodes] = useState([])
 
 
     useEffect(() => {
-
         axios({
             url: api_url + 'title?id=' + params.id,
             method: 'get'
         })
             .then(r => {
-                setAnimeTitle(r.data.names.ru)
+                setAnimeInfo(r.data)
                 let ep = r.data.player?.list[params.episode];
                 setEpisodes(makeNormalList(r?.data?.player?.list))
 
@@ -43,54 +40,21 @@ const PlayerPage = () => {
                 }
                 console.log('re ', videoSrc)
                 console.log()
-
-
-
             })
-            .catch(e => {})
+            .catch(e => console.error(e))
     }, [params?.id, params?.episode])
 
-    useEffect(() => {
-        // const secInterval = setInterval(() => {
-        //     const videoEl = videoRef.current
-        //     console.log(`time: ${videoEl?.currentTime}`)
-        //
-        // }, 1000)
-        //
-        // return () => {
-        //     clearInterval(secInterval)
-        // }
+    useEffect(() => { // синхронизация времени
+
     }, [])
-
-    const nextEp = () => {
-
-    }
-
-    const prevEp = () => {
-
-    }
 
     return (
         <div className="player_page">
             <div className="player_page_controls">
-
                 <h1>
-                    <span className="controls_title">{compressString(animeTitle, 35)}</span>
+                    <span className="controls_title">{compressString(anime_info?.names?.ru, 35)}</span>
                     <span className="controls_episode_title">{params.episode}/{episodes.length}</span>
                 </h1>
-
-
-
-
-                {/*<div className="inv_sep"></div>*/}
-
-                {/*<div className="right_episodes_list">*/}
-                {/*    {*/}
-                {/*        episodes.map(eps => <EpisodeLineRight releaseId={params.id} index={eps.episode} active={eps.episode == params.episode}/>)*/}
-                {/*    }*/}
-                {/*</div>*/}
-
-
             </div>
 
             <ReactHlsPlayer
