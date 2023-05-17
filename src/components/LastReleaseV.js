@@ -14,7 +14,7 @@ const LastReleaseV = ({anime_info}) => {
                     {compressString(anime_info?.description, 270)}
                 </p>
             </span>
-            <img src={ani_url + anime_info?.posters?.small?.url} alt="" className="last_release_v_poster"/>
+            <img src={ani_url + anime_info?.posters?.small?.url} alt={anime_info?.names?.ru} className="last_release_v_poster"/>
         </div>
     );
 };

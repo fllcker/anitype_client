@@ -437,6 +437,11 @@ h1 {
   color: transparent;
 
   margin-top: 10px;
+
+  /*min-height: 500px;*/
+  min-width: 250px;
+  min-height: 357px;
+  background: #222;
 }
 
 .last_release_v:hover {
@@ -453,7 +458,6 @@ h1 {
   max-width: 250px;
   width: 250px;
 
-  height: 100%;
 
   transition: .2s;
 }
@@ -601,4 +605,37 @@ h1 {
 
 .header_mob_search{
   display: none;
+}
+
+.release_items_null_h1 {
+  font-size: 40px;
+
+  text-align: center;
+
+  transform: rotateZ(30deg);
+
+  margin: 0;
+  margin-top: -10px;
+}
+
+.release_items_null_text {
+  margin: 0 0 0 30px;
+}
+
+.release_items_null {
+  display: flex;
+  align-items: center;
+  background: #eaeaea;
+
+
+  padding: 30px;
+
+  border-radius: 10px;
+  user-select: none;
+
+  color: #5b5b5b;
+}
+
+img {
+  color: white;
 }

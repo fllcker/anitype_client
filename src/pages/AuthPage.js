@@ -31,6 +31,26 @@ const AuthPage = () => {
                 })
                 nav('/')
             })
+            .catch(em => {
+                console.log('err', em.response.data)
+                let et = em.response.data.detail;
+
+                switch (et) {
+                    case 'User with this username already exists!': {
+                        setErr('Имя пользователя занято!')
+                        break;
+                    }
+                    case 'User not found!' : {
+                        setErr('Пользователя с таким именем нет!')
+                        break;
+                    }
+                    case 'Wrong data': {
+                        setErr('Неверный пароль!')
+                        break;
+                    }
+                    default: setErr(em.response.data.detail)
+                }
+            })
     }
 
     return (

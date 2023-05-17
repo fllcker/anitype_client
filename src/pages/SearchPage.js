@@ -61,6 +61,16 @@ const SearchPage = () => {
                             // result?.list?.map(e => <AnimeLine anime_info={e} key={e.id}/>)     | anime_list
                             result?.list?.map(e => <LastReleaseV anime_info={e} key={e.id}/>)
                         }
+
+                        {
+                            result?.list?.length === 0 &&
+                            <div className="release_items_null">
+                                <p className="release_items_null_h1">:(</p>
+                                <p className="release_items_null_text">Нет результатов</p>
+                            </div>
+                        }
+
+
                     </div>
 
                 </div>

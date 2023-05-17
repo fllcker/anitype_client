@@ -10,21 +10,21 @@ const Header = ({selected = ''}) => {
         <>
             <div className="header">
                 <div className="header_left">
-                    <Link to="/" className={selected === 'home' && 'active'}>Главная</Link>
-                    <Link to="/last" className={selected === 'last_releases' && 'active'}>Последние релизы</Link>
-                    <Link to="/random" className={selected === 'random_release no1000' && 'active'}>Случайный релиз</Link>
+                    <Link to="/" className={selected === 'home' ? 'active' : ''}>Главная</Link>
+                    <Link to="/last" className={selected === 'last_releases' ? 'active' : ''}>Последние релизы</Link>
+                    <Link to="/random" className={selected === 'random_release no1000' ? 'active' : ''}>Случайный релиз</Link>
 
                     <Link to="/search" className={selected === 'search' ? 'active header_mob_search' : 'header_mob_search'}>Поиск</Link>
 
                     <HeaderSearch/>
                 </div>
                 <div className="header_right">
-                    <Link to="/favourite" className={selected === 'fav' && 'active'}>Избранное</Link>
+                    <Link to="/favourite" className={selected === 'fav' ? 'active' : ''}>Избранное</Link>
 
                     {
                         cookies.username ?
-                            <Link to="/account" className={selected === 'auth' && 'active'}>Аккаунт ({cookies.username})</Link> :
-                            <Link to="/auth" className={selected === 'auth' && 'active'}>Авторизация</Link>
+                            <Link to="/account" className={selected === 'auth' ? 'active' : ''}>Аккаунт ({cookies.username})</Link> :
+                            <Link to="/auth" className={selected === 'auth' ? 'active' : ''}>Авторизация</Link>
                     }
                 </div>
             </div>
