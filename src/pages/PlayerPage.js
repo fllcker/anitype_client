@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import {api_url, compressString, makeNormalList} from "../utils/anilibria";
@@ -7,6 +7,8 @@ import EpisodeLine from "../components/EpisodeLine";
 import EpisodeLineRight from "../components/EpisodeLineRight";
 
 const PlayerPage = () => {
+    const videoRef = useRef();
+
     let params = useParams()
 
     let [videoSrc, setVideoSrc] = useState('')
@@ -48,6 +50,18 @@ const PlayerPage = () => {
             .catch(e => {})
     }, [params?.id, params?.episode])
 
+    useEffect(() => {
+        // const secInterval = setInterval(() => {
+        //     const videoEl = videoRef.current
+        //     console.log(`time: ${videoEl?.currentTime}`)
+        //
+        // }, 1000)
+        //
+        // return () => {
+        //     clearInterval(secInterval)
+        // }
+    }, [])
+
     const nextEp = () => {
 
     }
@@ -86,6 +100,7 @@ const PlayerPage = () => {
                 className="reacthlsplayer2"
                 height="100vh"
                 preload={'auto'}
+                playerRef={videoRef}
             />
 
             <div className="player_page_controls player_page_controls_down">
