@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import SockJS from 'sockjs-client';
-import { Client, Message } from '@stomp/stompjs';
+import {Client, Message} from '@stomp/stompjs';
 import {api_url, compressString, makeNormalList} from "../utils/anilibria";
 import ReactHlsPlayer from "react-hls-player";
 import {useCookies} from "react-cookie";
@@ -52,11 +52,34 @@ const PlayerPage = () => {
             .catch(e => console.error(e))
     }, [params?.id, params?.episode])
 
+    // useEffect(() => {
+    //
+    // }, [params?.id, params?.episode, videoRef.current])
+
+    const onPlayerLoaded = (o) => {
+        if (!cookies.access) return console.log('!cookies.access');
+        if (!params.id || !params.episode) return console.log('!params.id || !params.episode');
+        //o.target.currentTime = 30
+
+        axios({
+            url: beUrl + `view/episodes/time/${params.id}/${params.episode}`,
+            method: 'get',
+            headers: {'Authorization': `Bearer ${cookies.access}`}
+        })
+            .then(tr => {
+                videoRef.current.currentTime = tr.data
+
+                console.log('received time', tr.data)
+            })
+            .catch(e => console.error(e))
+
+    }
+
     useEffect(() => { // синхронизация времени
         if (!params.id || !params.episode || !cookies.access) return console.log("!params.id || !params.episode || !cookies.access");
 
         const socket = new SockJS('https://anitypes.site/push-time');
-        const stompClient = new Client({ webSocketFactory: () => socket });
+        const stompClient = new Client({webSocketFactory: () => socket});
 
         const connectAndSubscribe = () => {
             if (!con.current) {
@@ -66,19 +89,19 @@ const PlayerPage = () => {
 
             stompClient.onConnect = () => {
                 const interval = setInterval(() => {
-                    if (videoRef.current.currentTime !== 0 && videoRef.current.currentTime !== lastPushedTime.current) {
+                    if (videoRef.current?.currentTime && videoRef.current.currentTime !== 0 && videoRef.current.currentTime !== lastPushedTime.current) {
                         lastPushedTime.current = videoRef.current.currentTime;
 
                         const jsonData = {
                             access: cookies.access,
                             releaseId: params.id,
                             episodeId: params.episode,
-                            time: videoRef.current?.currentTime ? Math.round(videoRef.current.currentTime) : -33,
+                            time: videoRef.current?.currentTime ? Math.round(videoRef.current.currentTime) : -1,
                             done: false,
                         };
                         const message = JSON.stringify(jsonData);
 
-                        stompClient.publish({ destination: '/app/push-time', body: message });
+                        stompClient.publish({destination: '/app/push-time', body: message});
                         console.log("SESDANSDNASJNDASD", message)
                         console.log('timee', videoRef.current.currentTime)
                     }
@@ -105,19 +128,23 @@ const PlayerPage = () => {
 
             <ReactHlsPlayer
                 src={videoSrc}
-                autoPlay={false}
+                autoPlay={true}
                 controls={true}
                 className="reacthlsplayer2"
                 height="100vh"
-                preload={'auto'}
                 playerRef={videoRef}
+                onLoadedData={onPlayerLoaded}
             />
 
             <div className="player_page_controls player_page_controls_down">
                 <div className="player_pae_controls_buttons">
-                    <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode - 1))} disabled={params.episode == 1}>Предыдущий эпизод</button>
+                    <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode - 1))}
+                            disabled={params.episode == 1}>Предыдущий эпизод
+                    </button>
                     <button onClick={() => nav('/release/' + params.id)}>Назад к релизу</button>
-                    <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode + 1))} disabled={params.episode == episodes.length}>Следующий эпизод</button>
+                    <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode + 1))}
+                            disabled={params.episode == episodes.length}>Следующий эпизод
+                    </button>
                 </div>
             </div>
         </div>
