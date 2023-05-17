@@ -9,7 +9,7 @@ const AuthPage = () => {
     let [cookies, setCookie] = useCookies(['username', 'access'])
     let nav = useNavigate();
 
-    let [mode, setMode] = useState('log')
+    let [mode, setMode] = useState('reg')
     let [err, setErr] = useState('')
 
     let [name, setName] = useState('')

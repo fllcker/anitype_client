@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {ani_url, compressString} from "../utils/anilibria";
 import {useNavigate} from "react-router-dom";
+import ProxyImg from "./ProxyImg";
 
 const LastReleaseV = ({anime_info}) => {
     const nav = useNavigate()
@@ -14,7 +15,7 @@ const LastReleaseV = ({anime_info}) => {
                     {compressString(anime_info?.description, 270)}
                 </p>
             </span>
-            <img src={ani_url + anime_info?.posters?.small?.url} alt={anime_info?.names?.ru} className="last_release_v_poster"/>
+            <ProxyImg url={ani_url + anime_info?.posters?.small?.url} alt={anime_info?.names?.ru} classes={"last_release_v_poster"}/>
         </div>
     );
 };

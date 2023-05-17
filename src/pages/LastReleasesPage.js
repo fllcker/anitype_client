@@ -21,7 +21,7 @@ const LastReleasesPage = () => {
 
                     <div className="releases_items">
                         {
-                            releases?.map(el => <LastReleaseV anime_info={el}/>)
+                            releases?.map(el => <LastReleaseV anime_info={el} key={el?.id}/>)
                         }
                     </div>
                 </div>
