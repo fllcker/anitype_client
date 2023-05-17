@@ -23,7 +23,7 @@ const Header = ({selected = ''}) => {
 
                     {
                         cookies.username ?
-                            <Link to="/account" className={selected === 'auth' ? 'active' : ''}>Аккаунт ({cookies.username})</Link> :
+                            <Link to="/account" className={selected === 'account' ? 'active' : ''}>Аккаунт ({cookies.username})</Link> :
                             <Link to="/auth" className={selected === 'auth' ? 'active' : ''}>Авторизация</Link>
                     }
                 </div>

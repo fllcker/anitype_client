@@ -640,3 +640,8 @@ h1 {
 img {
   color: white;
 }
+
+.account_page_text {
+  width: 100%;
+  margin: 15px;
+}
