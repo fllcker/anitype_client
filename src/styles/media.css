@@ -1,6 +1,22 @@
+@media (max-width: 1790px) {
+    .page_content {
+        width: 65%;
+    }
+}
+
+@media (max-width: 1640px) {
+    .page_content {
+        width: 70%;
+    }
+}
+
 @media (max-width: 1200px) {
     .backgroundvideo {
         height: 100%;
+    }
+
+    .page_content {
+        width: 80%;
     }
 }
 

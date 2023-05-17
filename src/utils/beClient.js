@@ -42,6 +42,7 @@ export function changeFav(token, releaseId, status = true, fun) {
         }
     })
         .then(e => fun(status))
+        .catch(e => console.error(e))
 }
 
 export function test123() {

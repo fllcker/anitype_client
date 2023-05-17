@@ -8,12 +8,15 @@ const ProxyImg = ({url, alt, classes}) => {
 
     useEffect(() => {
         if (proxed) return;
+        console.log(`PROXYIMG: ${url}`)
 
         fetch(`${beUrl}proxy/image?url=${encodeURIComponent(url)}`)
             .then(response => response.blob())
             .then(blob => {
                 const objectUrl = URL.createObjectURL(blob);
                 setImageSrc(objectUrl);
+
+                setProxed(true)
             })
     }, [])
 

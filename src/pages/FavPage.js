@@ -20,6 +20,7 @@ const FavPage = () => {
 
                 getCurrentReleases(setResult, releasesString)
             })
+            .catch(e => console.error(e))
     }, [])
 
     return (
@@ -32,7 +33,7 @@ const FavPage = () => {
 
                     <div className="releases_items favs_releases_items">
                         {
-                            result?.map(el => <LastReleaseV anime_info={el}/>)
+                            result?.map(el => <LastReleaseV anime_info={el} key={el.id}/>)
                         }
                     </div>
                 </div>

@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import {api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../utils/anilibria";
+import {ani_url, api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../utils/anilibria";
 import EpisodeLine from "../components/EpisodeLine";
 import Header from "../components/Header";
 import {useCookies} from "react-cookie";
 import {changeFav, getFavStatus} from "../utils/beClient";
 import Footer from "../components/Footer";
+import ProxyImg from "../components/ProxyImg";
 
 const ReleasePage = () => {
     const params = useParams();
@@ -22,7 +23,7 @@ const ReleasePage = () => {
             method: 'get'
         })
             .then(r => {
-                console.log(r.data)
+                console.log('RECEIVED ANIME iNFo', r.data)
                 setAnimeInfo(r.data)
             })
             .catch(e => nav('/search'))
@@ -40,7 +41,10 @@ const ReleasePage = () => {
                 <div className="page_content">
                     <div className="release_content">
                         <div className="release_content_poster">
-                            <img src={getPoster(anime_info?.posters?.small?.url)} alt="poster" className="release_page_image"/>
+                            {anime_info?.posters?.small &&
+                                <ProxyImg url={ani_url + anime_info?.posters?.small?.url} alt={anime_info?.names?.ru} classes={"release_page_image"}/>
+                            }
+
                         </div>
                         <div className="release_content_info">
                             <div className="release_content_info_upper">

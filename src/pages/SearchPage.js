@@ -42,6 +42,7 @@ const SearchPage = () => {
                     setResult(r.data)
                     console.log(r.data)
                 })
+                .catch(e => console.error(e))
         }
     }, [params.query])
 
@@ -63,10 +64,19 @@ const SearchPage = () => {
                         }
 
                         {
-                            result?.list?.length === 0 &&
+                            (query !== '' && (!result || !result.list || result?.list?.length === 0)) &&
                             <div className="release_items_null">
                                 <p className="release_items_null_h1">:(</p>
                                 <p className="release_items_null_text">Нет результатов</p>
+                            </div>
+                        }
+
+                        {
+                            (query === '') &&
+                            <div className="release_items_null">
+                                <p className="release_items_null_h1">{'<-'}</p>
+
+                                <p className="release_items_null_text">Введите запрос</p>
                             </div>
                         }
 

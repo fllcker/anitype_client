@@ -14,6 +14,8 @@ export const getPoster = (url) => {
 }
 
 export function compressString(str, maxLength = 450) {
+    if(!str || !str.length) return '';
+
     if (str.length <= maxLength) {
         return str; // Возвращает исходную строку, если она уже короче или равна maxLength
     }
