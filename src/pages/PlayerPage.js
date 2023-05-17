@@ -1,19 +1,27 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
+import SockJS from 'sockjs-client';
+import { Client, Message } from '@stomp/stompjs';
 import {api_url, compressString, makeNormalList} from "../utils/anilibria";
 import ReactHlsPlayer from "react-hls-player";
+import {useCookies} from "react-cookie";
+import {beUrl} from "../utils/beClient";
 
 const PlayerPage = () => {
     const videoRef = useRef();
 
     let params = useParams()
     let nav = useNavigate()
+    let [cookies] = useCookies(['access'])
 
     // anime infos
     let [anime_info, setAnimeInfo] = useState({})
     let [videoSrc, setVideoSrc] = useState('')
     let [episodes, setEpisodes] = useState([])
+
+    let con = useRef(false)
+    let lastPushedTime = useRef(0)
 
 
     useEffect(() => {
@@ -45,8 +53,46 @@ const PlayerPage = () => {
     }, [params?.id, params?.episode])
 
     useEffect(() => { // синхронизация времени
+        if (!params.id || !params.episode || !cookies.access) return console.log("!params.id || !params.episode || !cookies.access");
 
-    }, [])
+        const socket = new SockJS('https://anitypes.site/push-time');
+        const stompClient = new Client({ webSocketFactory: () => socket });
+
+        const connectAndSubscribe = () => {
+            if (!con.current) {
+                stompClient.activate();
+                con.current = true;
+            }
+
+            stompClient.onConnect = () => {
+                const interval = setInterval(() => {
+                    if (videoRef.current.currentTime !== 0 && videoRef.current.currentTime !== lastPushedTime.current) {
+                        lastPushedTime.current = videoRef.current.currentTime;
+
+                        const jsonData = {
+                            access: cookies.access,
+                            releaseId: params.id,
+                            episodeId: params.episode,
+                            time: videoRef.current?.currentTime ? Math.round(videoRef.current.currentTime) : -33,
+                            done: false,
+                        };
+                        const message = JSON.stringify(jsonData);
+
+                        stompClient.publish({ destination: '/app/push-time', body: message });
+                        console.log("SESDANSDNASJNDASD", message)
+                        console.log('timee', videoRef.current.currentTime)
+                    }
+                }, 3000);
+
+                return () => {
+                    clearInterval(interval);
+                    stompClient.deactivate();
+                };
+            };
+        };
+
+        connectAndSubscribe();
+    }, [params?.id, params.episode, cookies.access])
 
     return (
         <div className="player_page">
