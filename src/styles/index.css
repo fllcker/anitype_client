@@ -669,3 +669,7 @@ img {
   flex-direction: column;
   align-items: center;
 }
+
+.episode_line_done {
+  background: #2c2c2c;
+}

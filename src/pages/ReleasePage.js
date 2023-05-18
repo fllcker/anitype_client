@@ -8,6 +8,7 @@ import {useCookies} from "react-cookie";
 import {changeFav, getFavStatus} from "../utils/beClient";
 import Footer from "../components/Footer";
 import ProxyImg from "../components/ProxyImg";
+import EpisodesList from "../components/EpisodesList";
 
 const ReleasePage = () => {
     const params = useParams();
@@ -74,20 +75,7 @@ const ReleasePage = () => {
                         </div>
                     </div>
 
-                    <div className="episodes_content">
-                        <h1>Эпизоды
-                            <span className="episodes_count">{anime_info?.player?.episodes?.last}</span>
-                        </h1>
-
-                        {
-                            makeNormalList(anime_info?.player?.list).map(el => <EpisodeLine key={el.episode} index={el.episode} qualities={getStringOfQualities(el?.hls)}/>)
-
-
-                            //
-                            //
-                        }
-
-                    </div>
+                    <EpisodesList list={makeNormalList(anime_info?.player?.list)} releaseId={params?.id}/>
                 </div>
             </div>
 

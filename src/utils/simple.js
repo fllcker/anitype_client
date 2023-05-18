@@ -7,3 +7,11 @@ export function calcEpisodeDone(now, duration) {
 
     return false;
 }
+
+export function getCompletedEpisodes(episodeArray) {
+    if (!episodeArray) return;
+
+    return episodeArray
+        .filter(episode => episode.done)
+        .map(episode => episode?.episodeId);
+}

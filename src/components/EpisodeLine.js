@@ -1,7 +1,7 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
 
-const EpisodeLine = ({index, qualities}) => {
+const EpisodeLine = ({index, qualities, completed = false}) => {
     const nav = useNavigate()
 
     const go = () => {
@@ -9,7 +9,7 @@ const EpisodeLine = ({index, qualities}) => {
     }
 
     return (
-        <div className="episode_line" onClick={go}>
+        <div className={completed ? "episode_line episode_line_done" : "episode_line"} onClick={go}>
             <p className="episode_line_title">Episode {index}</p>
             <p className="episode_line_qualities">{qualities}</p>
         </div>
