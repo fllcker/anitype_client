@@ -6,7 +6,7 @@ import {auth} from "../utils/beClient";
 import {useNavigate} from "react-router-dom";
 
 const AuthPage = () => {
-    let [cookies, setCookie] = useCookies(['username', 'access'])
+    let [cookies, setCookie] = useCookies(['username', 'access', 'countOfPosts'])
     let nav = useNavigate();
 
     let [mode, setMode] = useState('reg')
@@ -23,6 +23,7 @@ const AuthPage = () => {
     let next = () => {
         if (name === '' || passwd === '') return setErr('Введите данные!')
         if (mode === 'reg' && passwd !== passwd2) return setErr('Пароли не совпадают!')
+        if (cookies.countOfPosts && cookies.countOfPosts > 3) return setErr('Попробуйте позже!')
 
         auth(name, passwd, mode === 'reg' ? 'signup' : 'login')
             .then(r => {
@@ -33,6 +34,17 @@ const AuthPage = () => {
                 setCookie('access', token, {
                     maxAge: 3600 * 24 * 31
                 })
+
+                //a-d
+                if (cookies.countOfPosts) {
+                    setCookie('countOfPosts', +cookies.countOfPosts + 1, {
+                        maxAge: 60
+                    })
+                } else {
+                    setCookie('countOfPosts', 1, {
+                        maxAge: 60
+                    })
+                }
                 nav('/')
             })
             .catch(em => {
