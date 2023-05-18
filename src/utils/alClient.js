@@ -7,6 +7,7 @@ export function getLastReleases(fun, page = 1, limit = 15) {
         method: 'get'
     })
         .then(r => fun(r?.data?.list))
+        .catch(e => console.error(e))
 }
 
 export function getRandomReleaseId() {
@@ -22,4 +23,5 @@ export function getCurrentReleases(fun, releasesString) {
         method: 'get'
     })
         .then(r => fun(r.data))
+        .catch(e => console.error(e))
 }

@@ -11,6 +11,7 @@ const TestPage = () => {
             method: 'get'
         })
             .then(r => setResult(r.data))
+            .catch(e => console.error(e))
     }
 
     return (

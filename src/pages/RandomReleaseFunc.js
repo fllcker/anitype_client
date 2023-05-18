@@ -8,6 +8,7 @@ const RandomReleaseFunc = () => {
     useEffect(() => {
         getRandomReleaseId()
             .then(r => nav('/release/' + r.data.id))
+            .catch(e => console.error(e))
     })
 
     return (

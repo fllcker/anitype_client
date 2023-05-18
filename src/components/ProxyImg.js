@@ -18,6 +18,7 @@ const ProxyImg = ({url, alt, classes}) => {
 
                 setProxed(true)
             })
+            .catch(e => console.error(e))
     }, [])
 
     return (

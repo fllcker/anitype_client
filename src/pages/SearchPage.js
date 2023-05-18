@@ -24,6 +24,7 @@ const SearchPage = () => {
                 setResult(r.data)
                 console.log(r.data)
             })
+            .catch(er => console.error(er))
     }
 
     const handleKeyDown = (event) => {

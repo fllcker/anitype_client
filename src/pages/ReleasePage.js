@@ -31,6 +31,7 @@ const ReleasePage = () => {
         if (cookies.access) {
             getFavStatus(cookies.access, params?.id)
                 .then(res => setFaved(res.data))
+                .catch(e => console.error(e))
         }
     }, [params?.id])
 
