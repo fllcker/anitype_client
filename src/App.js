@@ -9,6 +9,7 @@ import RandomReleaseFunc from "./pages/RandomReleaseFunc";
 import AuthPage from "./pages/AuthPage";
 import FavPage from "./pages/FavPage";
 import AccountPage from "./pages/AccountPage";
+import AppDownloadPage from "./pages/AppDownloadPage";
 
 function App() {
     return (
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/auth" element={<AuthPage/>}/>
                 <Route path="/favourite" element={<FavPage/>}/>
                 <Route path="/account" element={<AccountPage/>}/>
+                <Route path="/app" element={<AppDownloadPage/>}/>
                 <Route path="/" element={<MainPage/>}/>
 
             </Routes>

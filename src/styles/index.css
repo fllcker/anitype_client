@@ -645,3 +645,27 @@ img {
   width: 100%;
   margin: 15px;
 }
+
+.download_app_title {
+  width: 100%;
+  text-align: center;
+  font-size: 100px;
+}
+
+.windows {
+  color: #5e5eff;
+}
+
+.download_app_button_div {
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+
+.download_app_img {
+  width: 100%;
+}
+
+.download_app_page {
+  flex-direction: column;
+  align-items: center;
+}

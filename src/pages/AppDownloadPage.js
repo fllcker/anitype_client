@@ -1,0 +1,26 @@
+import React from 'react';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+const AppDownloadPage = () => {
+    return (
+        <>
+            <Header selected='app'/>
+
+            <div className="page download_app_page">
+                <div className="page_content">
+                    <h1 className="download_app_title">Приложение для <span className="windows"> Windows </span> уже готово!</h1>
+                    <div className="download_app_button_div">
+                        <button>Скачать</button>
+                    </div>
+                </div>
+                <img src="previewApp.png" alt="App preview" className="download_app_img"/>
+
+            </div>
+
+            <Footer/>
+        </>
+    );
+};
+
+export default AppDownloadPage;

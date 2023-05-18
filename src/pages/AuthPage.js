@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Header from "../components/Header";
 import {useCookies} from "react-cookie";
 import axios from "axios";
@@ -15,6 +15,10 @@ const AuthPage = () => {
     let [name, setName] = useState('')
     let [passwd, setPasswd] = useState('')
     let [passwd2, setPasswd2] = useState('')
+
+    useEffect(() => {
+        if (cookies.access && cookies.username) nav('/')
+    }, [cookies.access, cookies.username])
 
     let next = () => {
         if (name === '' || passwd === '') return setErr('Введите данные!')
