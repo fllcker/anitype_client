@@ -88,4 +88,9 @@
     .release_content_info {
         margin-left: 0;
     }
+
+    .warnmessage {
+        margin-top: 150px;
+        background: black;
+    }
 }

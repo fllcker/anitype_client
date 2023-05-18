@@ -11,6 +11,10 @@ const Header = ({selected = ''}) => {
         <>
             <GlobalMessageReceiver/>
 
+            <span className="warnmessage">Внимание! Сейчас обновляется сервер,
+                    <br/>
+                    некоторые функции недоступны</span>
+
             <div className="header">
                 <div className="header_left">
                     <Link to="/" className={selected === 'home' ? 'active' : ''}>Главная</Link>
@@ -21,6 +25,8 @@ const Header = ({selected = ''}) => {
                     <Link to="/search" className={selected === 'search' ? 'active header_mob_search' : 'header_mob_search'}>Поиск</Link>
 
                     <HeaderSearch/>
+
+
                 </div>
                 <div className="header_right">
                     <Link to="/favourite" className={selected === 'fav' ? 'active' : ''}>Избранное</Link>

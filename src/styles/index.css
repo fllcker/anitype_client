@@ -717,3 +717,14 @@ img {
     background: white;
   }
 }
+
+.warnmessage {
+  position: absolute;
+  left: auto;
+  width: 100%;
+  text-align: center;
+
+  margin-top: 15px;
+
+  font-size: 12px;
+}
