@@ -7,6 +7,7 @@ import {api_url, compressString, makeNormalList} from "../utils/anilibria";
 import ReactHlsPlayer from "react-hls-player";
 import {useCookies} from "react-cookie";
 import {beUrl} from "../utils/beClient";
+import {calcEpisodeDone} from "../utils/simple";
 
 const PlayerPage = () => {
     const videoRef = useRef();
@@ -52,10 +53,6 @@ const PlayerPage = () => {
             .catch(e => console.error(e))
     }, [params?.id, params?.episode])
 
-    // useEffect(() => {
-    //
-    // }, [params?.id, params?.episode, videoRef.current])
-
     const onPlayerLoaded = (o) => {
         if (!cookies.access) return console.log('!cookies.access');
         if (!params.id || !params.episode) return console.log('!params.id || !params.episode');
@@ -97,7 +94,7 @@ const PlayerPage = () => {
                             releaseId: params.id,
                             episodeId: params.episode,
                             time: videoRef.current?.currentTime ? Math.round(videoRef.current.currentTime) : -1,
-                            done: false,
+                            done: calcEpisodeDone(videoRef.current?.currentTime, videoRef.current?.duration),
                         };
                         const message = JSON.stringify(jsonData);
 

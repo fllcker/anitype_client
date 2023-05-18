@@ -12,7 +12,7 @@ const Header = ({selected = ''}) => {
                 <div className="header_left">
                     <Link to="/" className={selected === 'home' ? 'active' : ''}>Главная</Link>
                     <Link to="/last" className={selected === 'last_releases' ? 'active' : ''}>Последние релизы</Link>
-                    <Link to="/random" className={selected === 'random_release' ? 'active no1000' : 'no1000'}>Случайный релиз</Link>
+                    {/*<Link to="/random" className={selected === 'random_release' ? 'active no1000' : 'no1000'}>Случайный релиз</Link>*/}
                     <Link to="/app" className={selected === 'app' ? 'active no1000' : 'no1000'}>Приложение</Link>
 
                     <Link to="/search" className={selected === 'search' ? 'active header_mob_search' : 'header_mob_search'}>Поиск</Link>
