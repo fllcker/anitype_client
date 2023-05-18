@@ -44,3 +44,19 @@ export function changeFav(token, releaseId, status = true, fun) {
         .then(e => fun(status))
         .catch(e => console.error(e))
 }
+
+export function getEpisodesViewsByRelease(token, releaseId) {
+    return axios({
+        url: beUrl + `view/episodes/release/${releaseId}`,
+        method: 'get',
+        headers: {'Authorization': `Bearer ${token}`}
+    })
+}
+
+export function getEpisodeTime(token, releaseId, episodeId) {
+    return axios({
+        url: beUrl + `view/episodes/time/${releaseId}/${episodeId}`,
+        method: 'get',
+        headers: {'Authorization': `Bearer ${token}`}
+    })
+}

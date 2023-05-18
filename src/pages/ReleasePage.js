@@ -9,6 +9,7 @@ import {changeFav, getFavStatus} from "../utils/beClient";
 import Footer from "../components/Footer";
 import ProxyImg from "../components/ProxyImg";
 import EpisodesList from "../components/EpisodesList";
+import {getAnimeById} from "../utils/alClient";
 
 const ReleasePage = () => {
     const params = useParams();
@@ -19,12 +20,8 @@ const ReleasePage = () => {
     const [faved, setFaved] = useState(false)
 
     useEffect(() => {
-        axios({
-            url: api_url + 'title?id=' + params.id,
-            method: 'get'
-        })
+        getAnimeById(params?.id)
             .then(r => {
-                console.log('RECEIVED ANIME iNFo', r.data)
                 setAnimeInfo(r.data)
             })
             .catch(e => nav('/search'))

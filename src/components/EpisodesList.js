@@ -3,7 +3,7 @@ import {getStringOfQualities, makeNormalList} from "../utils/anilibria";
 import EpisodeLine from "./EpisodeLine";
 import {useCookies} from "react-cookie";
 import axios from "axios";
-import {beUrl} from "../utils/beClient";
+import {beUrl, getEpisodesViewsByRelease} from "../utils/beClient";
 import {getCompletedEpisodes} from "../utils/simple";
 
 const EpisodesList = ({list, releaseId}) => {
@@ -14,11 +14,7 @@ const EpisodesList = ({list, releaseId}) => {
     useEffect(() => {
         if (!cookies.access || !releaseId) return;
 
-        axios({
-            url: beUrl + `view/episodes/release/${releaseId}`,
-            method: 'get',
-            headers: {'Authorization': `Bearer ${cookies.access}`}
-        })
+        getEpisodesViewsByRelease(cookies.access, releaseId)
             .then(r => {
                 setCompletedArray(getCompletedEpisodes(r.data))
             })

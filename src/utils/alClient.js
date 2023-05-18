@@ -1,5 +1,5 @@
 import axios from "axios";
-import {api_url} from "./anilibria";
+import {api_url, getSearchUrl} from "./anilibria";
 
 export function getLastReleases(fun, page = 1, limit = 15) {
     axios({
@@ -24,4 +24,18 @@ export function getCurrentReleases(fun, releasesString) {
     })
         .then(r => fun(r.data))
         .catch(e => console.error(e))
+}
+
+export function getAnimeById(id) {
+    return axios({
+        url: api_url + 'title?id=' + id,
+        method: 'get'
+    })
+}
+
+export function getSearch(query) {
+    return axios({
+        url: getSearchUrl(query),
+        method: 'get'
+    })
 }

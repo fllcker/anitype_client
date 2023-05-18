@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import {useParams} from "react-router-dom";
 import Footer from "../components/Footer";
 import LastReleaseV from "../components/LastReleaseV";
+import {getSearch} from "../utils/alClient";
 
 const SearchPage = () => {
     let params = useParams()
@@ -16,10 +17,7 @@ const SearchPage = () => {
     const goSearch = () => {
         if (query === '') return;
 
-        axios({
-            url: getSearchUrl(query),
-            method: 'get'
-        })
+        getSearch(query)
             .then(r => {
                 setResult(r.data)
                 console.log(r.data)

@@ -6,7 +6,7 @@ import {Client, Message} from '@stomp/stompjs';
 import {api_url, compressString, makeNormalList} from "../utils/anilibria";
 import ReactHlsPlayer from "react-hls-player";
 import {useCookies} from "react-cookie";
-import {beUrl} from "../utils/beClient";
+import {beUrl, getEpisodeTime} from "../utils/beClient";
 import {calcEpisodeDone} from "../utils/simple";
 import GlobalMessageReceiver from "../components/GlobalMessageReceiver";
 
@@ -59,11 +59,7 @@ const PlayerPage = () => {
         if (!params.id || !params.episode) return console.log('!params.id || !params.episode');
         //o.target.currentTime = 30
 
-        axios({
-            url: beUrl + `view/episodes/time/${params.id}/${params.episode}`,
-            method: 'get',
-            headers: {'Authorization': `Bearer ${cookies.access}`}
-        })
+        getEpisodeTime(cookies.access, params.id, params.episode)
             .then(tr => {
                 videoRef.current.currentTime = tr.data
 
