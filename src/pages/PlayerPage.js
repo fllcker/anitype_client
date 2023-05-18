@@ -8,6 +8,7 @@ import ReactHlsPlayer from "react-hls-player";
 import {useCookies} from "react-cookie";
 import {beUrl} from "../utils/beClient";
 import {calcEpisodeDone} from "../utils/simple";
+import GlobalMessageReceiver from "../components/GlobalMessageReceiver";
 
 const PlayerPage = () => {
     const videoRef = useRef();
@@ -115,36 +116,39 @@ const PlayerPage = () => {
     }, [params?.id, params.episode, cookies.access])
 
     return (
-        <div className="player_page">
-            <div className="player_page_controls">
-                <h1>
-                    <span className="controls_title">{compressString(anime_info?.names?.ru, 35)}</span>
-                    <span className="controls_episode_title">{params.episode}/{episodes.length}</span>
-                </h1>
-            </div>
+        <>
+            <GlobalMessageReceiver/>
+            <div className="player_page">
+                <div className="player_page_controls">
+                    <h1>
+                        <span className="controls_title">{compressString(anime_info?.names?.ru, 35)}</span>
+                        <span className="controls_episode_title">{params.episode}/{episodes.length}</span>
+                    </h1>
+                </div>
 
-            <ReactHlsPlayer
-                src={videoSrc}
-                autoPlay={true}
-                controls={true}
-                className="reacthlsplayer2"
-                height="100vh"
-                playerRef={videoRef}
-                onLoadedData={onPlayerLoaded}
-            />
+                <ReactHlsPlayer
+                    src={videoSrc}
+                    autoPlay={true}
+                    controls={true}
+                    className="reacthlsplayer2"
+                    height="100vh"
+                    playerRef={videoRef}
+                    onLoadedData={onPlayerLoaded}
+                />
 
-            <div className="player_page_controls player_page_controls_down">
-                <div className="player_pae_controls_buttons">
-                    <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode - 1))}
-                            disabled={params.episode == 1}>Предыдущий эпизод
-                    </button>
-                    <button onClick={() => nav('/release/' + params.id)}>Назад к релизу</button>
-                    <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode + 1))}
-                            disabled={params.episode == episodes.length}>Следующий эпизод
-                    </button>
+                <div className="player_page_controls player_page_controls_down">
+                    <div className="player_pae_controls_buttons">
+                        <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode - 1))}
+                                disabled={params.episode == 1}>Предыдущий эпизод
+                        </button>
+                        <button onClick={() => nav('/release/' + params.id)}>Назад к релизу</button>
+                        <button onClick={() => nav('/release/' + params.id + '/play/' + (+params.episode + 1))}
+                                disabled={params.episode == episodes.length}>Следующий эпизод
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

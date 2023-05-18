@@ -2,12 +2,15 @@ import React from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import HeaderSearch from "./HeaderSearch";
 import {useCookies} from "react-cookie";
+import GlobalMessageReceiver from "./GlobalMessageReceiver";
 
 const Header = ({selected = ''}) => {
     let [cookies] = useCookies(['username'])
 
     return (
         <>
+            <GlobalMessageReceiver/>
+
             <div className="header">
                 <div className="header_left">
                     <Link to="/" className={selected === 'home' ? 'active' : ''}>Главная</Link>

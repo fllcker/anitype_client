@@ -673,3 +673,47 @@ img {
 .episode_line_done {
   background: #2c2c2c;
 }
+
+.message_rec_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  z-index: 9999;
+}
+
+.message_rec_block {
+  margin-top: 200px;
+  z-index: 9999;
+
+  padding: 12px 30px;
+  background: white;
+  color: black;
+  border-radius: 15px;
+  max-width: 300px;
+  cursor: pointer;
+
+  animation: messageFade 1s ease-in infinite;
+}
+
+.message_rec_block_hide {
+  font-size: 12px;
+  margin: 0;
+  margin-top: 10px;
+
+  color: #676767;
+  text-align: right;
+}
+
+@keyframes messageFade {
+  0% {
+    background: white;
+  }
+  50% {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    background: white;
+  }
+}

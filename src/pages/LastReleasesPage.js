@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import {getLastReleases} from "../utils/alClient";
 import LastReleaseV from "../components/LastReleaseV";
 import Footer from "../components/Footer";
+import GlobalMessageReceiver from "../components/GlobalMessageReceiver";
 
 const LastReleasesPage = () => {
     const [releases, setReleases] = useState([])
