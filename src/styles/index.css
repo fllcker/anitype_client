@@ -590,7 +590,9 @@ h1 {
 }
 
 .backgroundCustom {
-  background-image: url("https://images.pling.com/img/00/00/62/69/92/1730410/anime-forest-011.jpg");
+  background-image: url('https://images.pling.com/img/00/00/62/69/92/1730410/anime-forest-011.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main_page_desc {
@@ -736,4 +738,5 @@ img {
 
 #tsparticles {
   z-index: -1;
+  position: fixed;
 }

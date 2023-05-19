@@ -28,6 +28,10 @@
     .header_search_mobile_no_display {
         display: none;
     }
+
+    .backgroundCustom {
+        background-size: auto;
+    }
 }
 
 @media (max-width: 750px) {
