@@ -48,6 +48,17 @@ const AuthPage = () => {
                 nav('/')
             })
             .catch(em => {
+                //a-d
+                if (cookies.countOfPosts) {
+                    setCookie('countOfPosts', +cookies.countOfPosts + 1, {
+                        maxAge: 60
+                    })
+                } else {
+                    setCookie('countOfPosts', 1, {
+                        maxAge: 60
+                    })
+                }
+                
                 console.log('err', em.response.data)
                 let et = em.response.data.detail;
 

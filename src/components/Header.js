@@ -11,9 +11,9 @@ const Header = ({selected = ''}) => {
         <>
             <GlobalMessageReceiver/>
 
-            <span className="warnmessage">Внимание! Сейчас обновляется сервер,
-                    <br/>
-                    некоторые функции недоступны</span>
+            {/*<span className="warnmessage">Внимание! Сейчас обновляется сервер,*/}
+            {/*        <br/>*/}
+            {/*        некоторые функции недоступны</span>*/}
 
             <div className="header">
                 <div className="header_left">
