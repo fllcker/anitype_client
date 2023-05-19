@@ -10,6 +10,8 @@ import AuthPage from "./pages/AuthPage";
 import FavPage from "./pages/FavPage";
 import AccountPage from "./pages/AccountPage";
 import AppDownloadPage from "./pages/AppDownloadPage";
+import HomePage from "./pages/HomePage";
+import FourOfFour from "./pages/FourOfFour";
 
 function App() {
     return (
@@ -40,7 +42,10 @@ function App() {
                 <Route path="/favourite" element={<FavPage/>}/>
                 <Route path="/account" element={<AccountPage/>}/>
                 <Route path="/app" element={<AppDownloadPage/>}/>
+                <Route path="/home/preview" element={<HomePage/>}/>
                 <Route path="/" element={<MainPage/>}/>
+
+                <Route path="*" element={<FourOfFour/>}/>
 
             </Routes>
         </>

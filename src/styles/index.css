@@ -740,3 +740,23 @@ img {
   z-index: -1;
   position: fixed;
 }
+
+.fof_page {
+  display: flex;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.fof_h1 {
+  transform: rotateZ(180deg);
+
+  width: max-content;
+  font-size: 100px;
+
+  margin: 0;
+}
+
+.fof_page {
+  margin-top: 140px;
+}
