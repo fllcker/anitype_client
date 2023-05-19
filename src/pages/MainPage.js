@@ -22,7 +22,7 @@ const MainPage = () => {
                 </div>
             </div>
 
-            <video src="animebg.mp4" className="backgroundvideo" muted autoPlay loop></video>
+            <video src="animebg.webm" className="backgroundvideo" muted autoPlay loop></video>
 
         </>
     );
