@@ -47,7 +47,7 @@ const SearchPage = () => {
 
     return (
         <>
-            <Header/>
+            <Header selected='search'/>
             <div className="page">
                 <div className="page_content">
                     <h1>Поиск</h1>

@@ -5,11 +5,11 @@ import axios from "axios";
 import {auth} from "../utils/beClient";
 import {useNavigate} from "react-router-dom";
 
-const AuthPage = () => {
+const AuthPage = ({defMode = 'reg'}) => {
     let [cookies, setCookie] = useCookies(['username', 'access', 'countOfPosts'])
     let nav = useNavigate();
 
-    let [mode, setMode] = useState('reg')
+    let [mode, setMode] = useState(defMode)
     let [err, setErr] = useState('')
 
     let [name, setName] = useState('')

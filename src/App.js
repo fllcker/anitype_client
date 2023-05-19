@@ -30,7 +30,13 @@ function App() {
 
                 <Route path="/last" element={<LastReleasesPage/>}/>
                 <Route path="/random" element={<RandomReleaseFunc/>}/>
-                <Route path="/auth" element={<AuthPage/>}/>
+
+                <Route path="/auth">
+                    <Route index element={<AuthPage/>}/>
+                    <Route path="signin" element={<AuthPage defMode={"log"}/>}/>
+                    <Route path="signup" element={<AuthPage defMode={"reg"}/>}/>
+                </Route>
+
                 <Route path="/favourite" element={<FavPage/>}/>
                 <Route path="/account" element={<AccountPage/>}/>
                 <Route path="/app" element={<AppDownloadPage/>}/>

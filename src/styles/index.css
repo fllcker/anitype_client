@@ -579,15 +579,18 @@ h1 {
 }
 
 .backgroundvideo{
-  width: 100%;
+
   position: absolute;
   top: -100px;
   z-index: -1;
 
-  object-fit: cover;
 
   overflow: hidden;
   filter: brightness(0.7);
+}
+
+.backgroundCustom {
+  background-image: url("https://images.pling.com/img/00/00/62/69/92/1730410/anime-forest-011.jpg");
 }
 
 .main_page_desc {
@@ -729,4 +732,8 @@ img {
   width: fit-content;
 
   left: 45%;
+}
+
+#tsparticles {
+  z-index: -1;
 }

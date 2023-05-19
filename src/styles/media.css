@@ -11,10 +11,6 @@
 }
 
 @media (max-width: 1200px) {
-    .backgroundvideo {
-        height: 100%;
-    }
-
     .page_content {
         width: 80%;
     }
