@@ -93,6 +93,12 @@
         margin-top: 150px;
         background: black;
     }
+
+
+/*    Kodik releases*/
+    .no_phone {
+        display: none;
+    }
 }
 
 @media (max-width: 610px) {
@@ -101,11 +107,49 @@
         height: 100%;
         aspect-ratio: 16 / 9;
     }
+
+    .small_release_line_info {
+        display: none;
+    }
+
+    .search_under_el_no_phone {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .small_release_line {
+        padding: 13px 20px;
+
+    }
 }
 
 /*Height*/
 @media (max-height: 780px) {
     .reacthlsplayer2 {
         height: 70vh;
+    }
+}
+
+
+/*No `s*/
+@media (max-width: 930px) {
+    .no930 {
+        display: none;
+    }
+}
+@media (max-width: 690px) {
+    .no690 {
+        display: none;
+    }
+}
+@media (max-width: 400px) {
+    .no400 {
+        display: none;
+    }
+}
+@media (max-width: 310px) {
+    .no310 {
+        display: none;
     }
 }

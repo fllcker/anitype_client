@@ -436,6 +436,8 @@ h1 {
 
 }
 
+
+
 .last_release_v {
   border-radius: 20px;
   overflow: hidden;
@@ -600,7 +602,8 @@ h1 {
 }
 
 .backgroundCustom {
-  background-image: url('https://images.pling.com/img/00/00/62/69/92/1730410/anime-forest-011.jpg');
+  /*background-image: url('https://images.pling.com/img/00/00/62/69/92/1730410/anime-forest-011.jpg');*/
+  background-image: url('https://i.imgur.com/3X3yJ9N.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -954,4 +957,90 @@ img {
   max-width: 300px;
   text-align: center;
   user-select: none;
+}
+
+.search_under {
+  width: 95%;
+  text-align: right;
+  font-size: 13px;
+  color: #888888;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.search_under_el {
+  margin-right: 10px;
+  transition: .2s;
+}
+
+.search_under_el:hover {
+  color: #b9b9b9;
+}
+
+.search_under_h_selected {
+  color: #b9b9b9;
+}
+
+
+.search_under_no_select {
+  user-select: none;
+  cursor: auto;
+}
+.search_under_no_select:hover {
+  color: #888888;
+}
+
+.kodik_release_items {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 100%;
+  margin-top: 40px;
+
+  width: 100%;
+}
+
+.small_release_line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 13px 35px;
+  border-radius: 15px;
+  background: #282828;
+
+  margin-bottom: 15px;
+
+  cursor: pointer;
+  transition: .2s;
+}
+
+.small_release_line:hover {
+  background: #3a3a3a;
+
+}
+
+.small_release_line_el {
+  display: flex;
+  flex-direction: column;
+
+  width: 200px;
+  overflow-x: hidden;
+}
+
+.rl_small_el {
+  width: 90px;
+}
+
+.small_release_line_el_title {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+}
+
+.small_release_line_el_value {
+  font-size: 13px;
+  color: #9b9b9b;
 }

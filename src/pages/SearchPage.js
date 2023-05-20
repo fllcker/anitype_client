@@ -7,8 +7,14 @@ import {useParams} from "react-router-dom";
 import Footer from "../components/Footer";
 import LastReleaseV from "../components/LastReleaseV";
 import {getSearch} from "../utils/alClient";
+import SearchPageResultsAni from "../components/SearchPageResultsAni";
+import {getSearchKodik} from "../utils/kodikClient";
+import {removeDuplicatesByTitleOrig} from "../utils/simple";
+import SearchPageResultsKodik from "../components/SearchPageResultsKodik";
 
 const SearchPage = () => {
+    let [source, setSource] = useState('ani')
+
     let params = useParams()
     let [query, setQuery] = useState('')
     let [result, setResult] = useState([])
@@ -17,33 +23,56 @@ const SearchPage = () => {
     const goSearch = () => {
         if (query === '') return;
 
+        if (source === 'ani') {
+            goSearchAni()
+        } else if (source === 'kodik') {
+            goSearchKodik()
+        }
+    }
+
+    const goSearchAni = () => {
+        if (query === '') return;
+
         getSearch(query)
             .then(r => {
                 setResult(r.data)
-                console.log(r.data)
             })
             .catch(er => console.error(er))
     }
 
+    const goSearchKodik = () => {
+        if (query === '') return;
+
+        getSearchKodik(query)
+            .then(r => {
+                // console.log('kod', r.data.results)
+                // console.log('kod2', removeDuplicatesByTitleOrig(r.data.results))
+                setResult(removeDuplicatesByTitleOrig(r.data.results))
+            })
+            .catch(er => console.error(er))
+    }
+
+    // когда нажимается enter
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') goSearch()
     }
 
+    // поиск когда из другого места
     useEffect(() => {
         if (params.query) {
             setQuery(params.query)
-
-            axios({
-                url: getSearchUrl(params.query),
-                method: 'get'
-            })
-                .then(r => {
-                    setResult(r.data)
-                    console.log(r.data)
-                })
-                .catch(e => console.error(e))
+            goSearch()
         }
     }, [params.query])
+
+    const changeSource = (nowsrc) => {
+        if (source !== nowsrc) {
+            setSource(nowsrc)
+            if (nowsrc === 'ani') goSearchAni()
+            if (nowsrc === 'kodik') goSearchKodik()
+        }
+
+    }
 
     return (
         <>
@@ -54,33 +83,30 @@ const SearchPage = () => {
                     <input type="text" className="search_page_input" placeholder="Введите запрос"
                            onKeyDown={handleKeyDown} onBlur={goSearch} value={query}
                            onChange={e => setQuery(e.target.value)}/>
+                    <p className="search_under">
+                        <span>
+                            <span className="search_under_el search_under_no_select">Источник:</span>
+                            <span className={source === 'ani' ? "search_under_el search_under_h_selected" : "search_under_el"}
+                            onClick={() => changeSource('ani')}>Anilibria</span>
+                            <span className={source === 'kodik' ? "search_under_el search_under_h_selected" : "search_under_el"}
+                            onClick={() => changeSource('kodik')}>Kodik</span>
+                        </span>
 
+                        <span>
+                            <span className="search_under_el search_under_el_no_phone">Каталог</span>
+                            <span className="search_under_el search_under_el_no_phone">Расширенный поиск</span>
+                        </span>
+                    </p>
 
-                    <div className="releases_items">
-                        {
-                            // result?.list?.map(e => <AnimeLine anime_info={e} key={e.id}/>)     | anime_list
-                            result?.list?.map(e => <LastReleaseV anime_info={e} key={e.id}/>)
-                        }
+                    {
+                        source === 'ani' &&
+                        <SearchPageResultsAni result={result} query={query} />
+                    }
 
-                        {
-                            (query !== '' && (!result || !result.list || result?.list?.length === 0)) &&
-                            <div className="release_items_null">
-                                <p className="release_items_null_h1">:(</p>
-                                <p className="release_items_null_text">Нет результатов</p>
-                            </div>
-                        }
-
-                        {
-                            (query === '') &&
-                            <div className="release_items_null">
-                                <p className="release_items_null_h1">{'<-'}</p>
-
-                                <p className="release_items_null_text">Введите запрос</p>
-                            </div>
-                        }
-
-
-                    </div>
+                    {
+                        source === 'kodik' &&
+                        <SearchPageResultsKodik result={result} query={query} />
+                    }
 
                 </div>
             </div>

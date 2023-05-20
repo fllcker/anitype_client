@@ -11,7 +11,7 @@ import ProxyImg from "../components/ProxyImg";
 import EpisodesList from "../components/EpisodesList";
 import {getAnimeById} from "../utils/alClient";
 import ChoosePlayer from "../components/ChoosePlayer";
-import {getCurrentPlayerString} from "../utils/simple";
+import {getCurrentPlayerString, removeDescAd} from "../utils/simple";
 
 const ReleasePage = () => {
     const params = useParams();
@@ -68,7 +68,7 @@ const ReleasePage = () => {
                                 </p>
 
                                 <p className="anime_line_info__text anime_line_info__desc">
-                                    {anime_info?.description}
+                                    {removeDescAd(anime_info?.description)}
                                 </p>
                             </div>
 
