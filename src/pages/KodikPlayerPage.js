@@ -53,6 +53,8 @@ const KodikPlayerPage = () => {
                         <p>{message}</p>
 
                 }
+
+                <p className="player2_page_small_text">Внимание! В этом плеере есть реклама. Если вы хотите смотреть без рекламы, можете выбрать стандартный плеер</p>
             </div>
         </>
     );
