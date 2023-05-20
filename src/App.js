@@ -13,6 +13,8 @@ import AppDownloadPage from "./pages/AppDownloadPage";
 import HomePage from "./pages/HomePage";
 import FourOfFour from "./pages/FourOfFour";
 import KodikPlayerPage from "./pages/KodikPlayerPage";
+import PravoPage from "./pages/PravoPage";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
     return (
@@ -49,6 +51,8 @@ function App() {
                 <Route path="/account" element={<AccountPage/>}/>
                 <Route path="/app" element={<AppDownloadPage/>}/>
                 <Route path="/home/preview" element={<HomePage/>}/>
+                <Route path="/pravo" element={<PravoPage/>}/>
+                <Route path="/about" element={<AboutPage/>}/>
                 <Route path="/" element={<MainPage/>}/>
 
                 <Route path="*" element={<FourOfFour/>}/>

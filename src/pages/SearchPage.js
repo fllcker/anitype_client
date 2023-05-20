@@ -11,6 +11,7 @@ import SearchPageResultsAni from "../components/SearchPageResultsAni";
 import {getSearchKodik} from "../utils/kodikClient";
 import {removeDuplicatesByTitleOrig} from "../utils/simple";
 import SearchPageResultsKodik from "../components/SearchPageResultsKodik";
+import MainFooter from "../components/MainFooter";
 
 const SearchPage = () => {
     let [source, setSource] = useState('ani')
@@ -18,6 +19,8 @@ const SearchPage = () => {
     let params = useParams()
     let [query, setQuery] = useState('')
     let [result, setResult] = useState([])
+
+    useEffect(() => console.log(result), [result])
 
 
     const goSearch = () => {
@@ -111,6 +114,7 @@ const SearchPage = () => {
                 </div>
             </div>
             <Footer/>
+            <MainFooter abs={result?.list?.length === 0 || result?.length === 0}/>
         </>
     );
 };
