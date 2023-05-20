@@ -760,3 +760,100 @@ img {
 .fof_page {
   margin-top: 140px;
 }
+
+.home_username {
+  color: var(--accent_color);
+}
+
+.home_blocks {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home_block {
+  width: 100%;
+}
+
+.fr_list_block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.fr_list_block_el {
+  width: 80%;
+  padding: 15px 30px;
+  background: #2a2a2a;
+  border-radius: 20px;
+  margin-bottom: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: .2s;
+
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.fr_list_block_el:hover {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+}
+
+.friends_list_watching {
+  text-align: right;
+
+  display: flex;
+
+  border: 1px solid #3a3a3a;
+  color: #9f9f9f;
+  padding: 7px 10px;
+  border-radius: 10px;
+
+  transition: .2s;
+  z-index: 3;
+}
+
+.friends_list_watching:hover {
+  background: var(--accent_color);
+  color: transparent;
+}
+
+.friends_list_watching:hover > * {
+  display: none;
+}
+
+.friends_list_watching:hover > .friends_list_watching_watch {
+  display: initial;
+}
+
+.friends_list_watching_title {
+  color: var(--accent_color);
+
+  margin-left: 0;
+}
+
+.friends-list_watching_time {
+  margin-left: 10px;
+  padding: 2px 5px;
+  font-size: 12px;
+  border-radius: 5px;
+
+  border: 1px solid #7e7e7e;
+  color: #9f9f9f;
+}
+
+.home_block_title {
+  font-size: 13px;
+  color: #9b9b9b;
+}
+
+.friends_list_watching_watch {
+  display: none;
+  color: black;
+  padding: 0 35px;
+
+  transition: .2s;
+}

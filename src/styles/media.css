@@ -94,3 +94,10 @@
         background: black;
     }
 }
+
+/*Height*/
+@media (max-height: 780px) {
+    .reacthlsplayer2 {
+        height: 70vh;
+    }
+}

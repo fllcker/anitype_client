@@ -15,3 +15,7 @@ export function getCompletedEpisodes(episodeArray) {
         .filter(episode => episode.done)
         .map(episode => episode?.episodeId);
 }
+
+export function removeDescAd() {
+    // TODO
+}
