@@ -19,3 +19,13 @@ export function getCompletedEpisodes(episodeArray) {
 export function removeDescAd() {
     // TODO
 }
+
+
+export function getCurrentPlayerString(player) {
+    if (!player || player === '' || player === 1) return 'стандартный'
+
+    if (+player === 2) return 'Kodik'
+
+    console.log('pl', player)
+    return 'стандартный'
+}

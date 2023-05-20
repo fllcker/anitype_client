@@ -10,11 +10,15 @@ import Footer from "../components/Footer";
 import ProxyImg from "../components/ProxyImg";
 import EpisodesList from "../components/EpisodesList";
 import {getAnimeById} from "../utils/alClient";
+import ChoosePlayer from "../components/ChoosePlayer";
+import {getCurrentPlayerString} from "../utils/simple";
 
 const ReleasePage = () => {
     const params = useParams();
     const nav = useNavigate();
-    const [cookies] = useCookies(['access'])
+    const [cookies] = useCookies(['access', 'player'])
+
+    const [choosePlayerWind, setChoosePlayerWind] = useState(false)
 
     const [anime_info, setAnimeInfo] = useState({})
     const [faved, setFaved] = useState(false)
@@ -33,9 +37,17 @@ const ReleasePage = () => {
         }
     }, [params?.id])
 
+    const goToKodik = () => {
+        console.log(anime_info.code)
+        nav(`/player/2/${anime_info?.code}/r/${params?.id}`)
+    }
+
     return (
         <>
             <Header/>
+
+            <ChoosePlayer display={choosePlayerWind} setDisplay={setChoosePlayerWind}/>
+
             <div className="page">
                 <div className="page_content">
                     <div className="release_content">
@@ -68,11 +80,28 @@ const ReleasePage = () => {
                                         <span className="span_button">Отметить просмотренным</span>
                                     </>
                                 }
+
+                                <div className="release_content_player_button">
+                                    <p>Сейчас у вас {
+                                        getCurrentPlayerString(cookies.player)
+                                    } плеер</p>
+                                    <button className="rcpbb" onClick={() => setChoosePlayerWind(true)}>Выбрать плеер</button>
+
+                                    {
+                                        +cookies.player === 2 && <button className="rcpbb kodik_watch_button" onClick={goToKodik}>Смотреть</button>
+                                    }
+
+
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <EpisodesList list={makeNormalList(anime_info?.player?.list)} releaseId={params?.id}/>
+                    {
+                        (!cookies.player || cookies.player === '' || +cookies.player === 1) &&
+                            <EpisodesList list={makeNormalList(anime_info?.player?.list)} releaseId={params?.id}/>
+                    }
+
                 </div>
             </div>
 

@@ -12,6 +12,7 @@ import AccountPage from "./pages/AccountPage";
 import AppDownloadPage from "./pages/AppDownloadPage";
 import HomePage from "./pages/HomePage";
 import FourOfFour from "./pages/FourOfFour";
+import KodikPlayerPage from "./pages/KodikPlayerPage";
 
 function App() {
     return (
@@ -28,6 +29,11 @@ function App() {
                 <Route path="/release">
                     <Route path=":id/play/:episode" element={<PlayerPage/>}/>
                     <Route path=":id" element={<ReleasePage/>}/>
+                </Route>
+
+                <Route path="/player">
+                    <Route path="2/:orig/r/:releaseId" element={<KodikPlayerPage/>}/>
+                    <Route path="2/:orig" element={<KodikPlayerPage/>}/>
                 </Route>
 
                 <Route path="/last" element={<LastReleasesPage/>}/>

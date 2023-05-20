@@ -5,6 +5,7 @@ import {useCookies} from "react-cookie";
 import axios from "axios";
 import {beUrl, getEpisodesViewsByRelease} from "../utils/beClient";
 import {getCompletedEpisodes} from "../utils/simple";
+import ChoosePlayer from "./ChoosePlayer";
 
 const EpisodesList = ({list, releaseId}) => {
     const [cookies] = useCookies(['access'])
@@ -23,21 +24,26 @@ const EpisodesList = ({list, releaseId}) => {
     }, [releaseId])
 
     return (
-        <div className="episodes_content">
-            <h1>Эпизоды
-                <span className="episodes_count">{list?.length}</span>
-            </h1>
+        <>
 
-            {
-                list?.map(el => <EpisodeLine
-                    key={el?.episode}
-                    index={el?.episode}
-                    qualities={getStringOfQualities(el?.hls)}
-                    completed={completedArray.includes(el?.episode)}
-                />)
-            }
 
-        </div>
+            <div className="episodes_content">
+                <h1>Эпизоды
+                    <span className="episodes_count">{list?.length}</span>
+                </h1>
+
+                {
+                    list?.map(el => <EpisodeLine
+                        key={el?.episode}
+                        index={el?.episode}
+                        qualities={getStringOfQualities(el?.hls)}
+                        completed={completedArray.includes(el?.episode)}
+                    />)
+                }
+
+            </div>
+        </>
+
     );
 };
 

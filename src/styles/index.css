@@ -349,6 +349,16 @@ h1 {
 
 }
 
+.player2_page_controls {
+  flex-direction: column;
+  padding: 0;
+  text-align: center;
+}
+
+.player2_page_controls h1 {
+  margin-bottom: 0;
+}
+
 .player_page_controls {
   background: #111;
   display: flex;
@@ -856,4 +866,82 @@ img {
   padding: 0 35px;
 
   transition: .2s;
+}
+
+.kodikplayer {
+  width: 610px;
+  height: 370px;
+}
+
+
+
+.choose_player_block {
+  position: fixed;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose_player {
+  padding: 10px 20px;
+  background: #eaeaea;
+  border-radius: 15px;
+
+  color: black;
+  text-align: center;
+}
+
+.choose_player_title {
+  font-weight: bold;
+}
+
+.choose_player_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.choose_player_list_el {
+  padding: 10px 15px;
+  border-radius: 15px;
+
+  border: 1px solid #dcdcdc;
+  margin-bottom: 10px;
+
+  color: #252525;
+
+  min-width: 200px;
+  user-select: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.choose_player_list_el:hover {
+  background: #c7c7c7;
+}
+
+.choose_player_close {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #9b9b9b;
+  cursor: pointer;
+}
+
+.release_content_player_button {
+  margin-top: 20px;
+}
+
+.release_content_player_button p {
+  color: #9b9b9b;
+  font-size: 13px;
+}
+
+.kodik_watch_button {
+  margin-left: 10px;
+}
+
+.rcpbb {
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
