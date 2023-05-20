@@ -17,6 +17,8 @@ export function getCompletedEpisodes(episodeArray) {
 }
 
 export function removeDescAd(description) {
+    if (!description || description?.length < 1) return '';
+
     let sponsorIndex = description.indexOf('Спонсор');
     if (sponsorIndex !== -1) {
         return description.slice(0, sponsorIndex);
