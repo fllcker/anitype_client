@@ -45,7 +45,7 @@ const AuthPage = ({defMode = 'reg'}) => {
                         maxAge: 60
                     })
                 }
-                nav('/')
+                nav('/account')
             })
             .catch(em => {
                 //a-d

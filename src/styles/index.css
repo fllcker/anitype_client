@@ -1059,3 +1059,55 @@ img {
   position: absolute;
   bottom: 0;
 }
+
+.account_page_warning {
+  color: #ff4747;
+}
+
+.per_email_inputs {
+  display: flex;
+  align-items: center;
+
+
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.span_btn {
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.per_email_bot {
+  margin-left: 10px;
+  color: #ff5959;
+  user-select: none;
+
+  animation: autohide 5s;
+  width: 100%;
+  margin-top: 0;
+}
+
+
+.verification_result {
+  width: 100%;
+
+}
+
+.verification_error {
+  color: #ff3131;
+}
+
+.verification_succ {
+  color: #34cc34;
+}
+
+
+@keyframes autohide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

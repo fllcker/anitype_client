@@ -60,3 +60,14 @@ export function getEpisodeTime(token, releaseId, episodeId) {
         headers: {'Authorization': `Bearer ${token}`}
     })
 }
+
+export function sendEmailVerify(token, email) {
+    return axios({
+        url: beUrl + 'users/verify/getemail',
+        method: 'post',
+        headers: {'Authorization': `Bearer ${token}`},
+        data: {
+            email: email
+        }
+    })
+}

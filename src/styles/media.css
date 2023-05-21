@@ -94,6 +94,14 @@
         background: black;
     }
 
+    .per_email_inputs {
+        flex-direction: column;
+    }
+
+    .span_btn {
+        margin-top: 20px;
+    }
+
 
 /*    Kodik releases*/
     .no_phone {

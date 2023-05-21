@@ -15,6 +15,7 @@ import FourOfFour from "./pages/FourOfFour";
 import KodikPlayerPage from "./pages/KodikPlayerPage";
 import PravoPage from "./pages/PravoPage";
 import AboutPage from "./pages/AboutPage";
+import VerificationPage from "./pages/VerificationPage";
 
 function App() {
     return (
@@ -53,6 +54,7 @@ function App() {
                 <Route path="/home/preview" element={<HomePage/>}/>
                 <Route path="/pravo" element={<PravoPage/>}/>
                 <Route path="/about" element={<AboutPage/>}/>
+                <Route path="/verification/:code" element={<VerificationPage/>} />
                 <Route path="/" element={<MainPage/>}/>
 
                 <Route path="*" element={<FourOfFour/>}/>
