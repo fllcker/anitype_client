@@ -32,6 +32,8 @@ export function getCurrentPlayerString(player) {
 
     if (+player === 2) return 'Kodik'
 
+    if (+player === 3) return 'дополнительный'
+
     console.log('pl', player)
     return 'стандартный'
 }

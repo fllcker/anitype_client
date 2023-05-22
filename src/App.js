@@ -16,6 +16,7 @@ import KodikPlayerPage from "./pages/KodikPlayerPage";
 import PravoPage from "./pages/PravoPage";
 import AboutPage from "./pages/AboutPage";
 import VerificationPage from "./pages/VerificationPage";
+import SecondPlayerPage from "./pages/SecondPlayerPage";
 
 function App() {
     return (
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/release">
                     <Route path=":id/play/:episode" element={<PlayerPage/>}/>
                     <Route path=":id" element={<ReleasePage/>}/>
+                    <Route path=":id/play2/:episode" element={<SecondPlayerPage/>}/>
                 </Route>
 
                 <Route path="/player">

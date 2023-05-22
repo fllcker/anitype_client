@@ -1,11 +1,12 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
 
-const EpisodeLine = ({index, qualities, completed = false}) => {
+const EpisodeLine = ({index, qualities, completed = false, player = 1}) => {
     const nav = useNavigate()
 
     const go = () => {
-        nav('play/' + index)
+        if (player === 1) nav('play/' + index)
+        if (player === 3) nav('play2/' + index)
     }
 
     return (
