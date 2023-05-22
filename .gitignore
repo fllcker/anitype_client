@@ -12,6 +12,8 @@
 /build
 
 # misc
+.replit
+replit.nix
 .DS_Store
 .env.local
 .env.development.local
