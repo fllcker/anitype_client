@@ -98,13 +98,12 @@ a.active {
 
 .search_input {
   padding: 9px 20px;
-  margin-left: 20px;
-
+  padding-left: 40px;
   background: transparent;
   border: 1px solid #696969;
   color: #b6b6b6;
-
   transition: .2s;
+  width: 100%;
 }
 
 .search_input::placeholder {
@@ -1115,6 +1114,13 @@ img {
 .header_left {
   display: flex;
   align-items: center;
+  width: 50%;
+}
+
+.header_right {
+    width: 100%;
+    display: flex;
+    justify-content: end;
 }
 
 .header_icon {
@@ -1126,10 +1132,24 @@ img {
   left: 6px;
 }
 
+.header_link {
+  white-space: nowrap;
+}
+
 .selected_icon {
   filter: brightness(1);
   width: 20px;
   position: relative;
   top: 4px;
   left: 6px;
+}
+
+.header_search {
+  width: 100%;
+  margin-left: 20px;
+}
+
+.searchLink {
+  position: relative;
+  left: 50px;
 }
