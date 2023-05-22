@@ -18,12 +18,14 @@
 
 @media (max-width: 1000px) {
 
-    .appLink {
+    .main_footer_abs {
         display: none;
     }
-
-    .searchLink {
-        left: 0;
+    .mob_menu {
+        display: flex;
+    }
+    .header {
+        display: none;
     }
 
     .no1000 {
