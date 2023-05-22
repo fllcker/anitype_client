@@ -82,14 +82,6 @@ const Header = ({selected = ''}) => {
             <span className="caption">Поиск</span>
         </div>
     </Link>
-    { cookies.username &&
-        <Link to="/favourite" className={selected === 'fav' ? 'active' : ''}>
-            <div>
-                <img className={selected === 'fav' ? 'selected_icon' : 'header_icon'} alt='icon' src='https://media.discordapp.net/attachments/1110187278447431800/1110241453143232562/icons8-favorite-100.png' />
-                <span className="caption">Любимое</span>
-            </div>
-        </Link>
-    }
     {
         cookies.username ?
             <Link to="/account" className={selected === 'account' ? 'active' : ''}>
