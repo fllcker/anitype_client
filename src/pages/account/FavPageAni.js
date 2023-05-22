@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../components/Header";
-import {getFavs} from "../utils/beClient";
+import Header from "../../components/main/Header";
+import {getFavs} from "../../utils/backendClient";
 import {useCookies} from "react-cookie";
-import {getCurrentReleases} from "../utils/alClient";
-import LastReleaseV from "../components/LastReleaseV";
-import Footer from "../components/Footer";
+import {getCurrentReleases} from "../../utils/anilibriaClient";
+import LastReleaseAni from "../../components/ani/LastReleaseAni";
+import Footer from "../../components/main/Footer";
 
-const FavPage = () => {
+const FavPageAni = () => {
     let [cookies] = useCookies(['access'])
 
     let [result, setResult] = useState([])
@@ -33,7 +33,7 @@ const FavPage = () => {
 
                     <div className="releases_items favs_releases_items">
                         {
-                            result?.map(el => <LastReleaseV anime_info={el} key={el.id}/>)
+                            result?.map(el => <LastReleaseAni anime_info={el} key={el.id}/>)
                         }
                     </div>
                 </div>
@@ -44,4 +44,4 @@ const FavPage = () => {
     );
 };
 
-export default FavPage;
+export default FavPageAni;

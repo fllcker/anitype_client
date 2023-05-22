@@ -1,23 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import axios from "axios";
-import {getSearchUrl} from "../utils/anilibria";
-import AnimeLine from "../components/AnimeLine";
-import Header from "../components/Header";
+import Header from "../components/main/Header";
 import {useParams} from "react-router-dom";
-import Footer from "../components/Footer";
-import LastReleaseV from "../components/LastReleaseV";
-import {getSearch} from "../utils/alClient";
-import SearchPageResultsAni from "../components/SearchPageResultsAni";
+import Footer from "../components/main/Footer";
+import {getSearch} from "../utils/anilibriaClient";
+import SearchPageResultsAni from "../components/ani/SearchPageResultsAni";
 import {getSearchKodik} from "../utils/kodikClient";
 import {removeDuplicatesByTitleOrig} from "../utils/simple";
-import SearchPageResultsKodik from "../components/SearchPageResultsKodik";
-import MainFooter from "../components/MainFooter";
+import SearchPageResultsKodik from "../components/kodik/SearchPageResultsKodik";
+import MainFooter from "../components/main/MainFooter";
 
 const SearchPage = () => {
-    let [source, setSource] = useState('ani')
+    let [source, setSource] = useState('kodik')
 
     let params = useParams()
-    let [query, setQuery] = useState('')
+    let [query, setQuery] = useState(params.query ? params.query : '')
     let [result, setResult] = useState([])
 
     useEffect(() => console.log(result), [result])

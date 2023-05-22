@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {beUrl} from "../utils/beClient";
+import {beUrl} from "../../utils/backendClient";
 
 const ProxyImg = ({url, alt, classes}) => {
     const [imageSrc, setImageSrc] = useState(url ? url : '')
