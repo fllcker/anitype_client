@@ -17,6 +17,15 @@
 }
 
 @media (max-width: 1000px) {
+    .main_footer_abs {
+        display: none;
+    }
+    .mob_menu {
+        display: flex;
+    }
+    .header {
+        display: none;
+    }
     .no1000 {
         display: none;
     }
