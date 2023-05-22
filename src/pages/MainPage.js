@@ -26,7 +26,7 @@ const MainPage = () => {
                 </div>
             </div>
 
-            {/*<video src="animebg.webm" className="backgroundvideo" muted autoPlay loop></video>*/}
+            <video src="https://cdn.discordapp.com/attachments/1109427599379267655/1109925819775725729/pidor.webm" className="backgroundvideo" muted autoPlay loop></video>
             {/*<img src="https://images.pling.com/img/00/00/62/69/92/1730410/anime-forest-011.jpg" alt="" className="backgroundvideo"/>*/}
 
         </>
