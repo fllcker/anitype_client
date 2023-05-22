@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../../components/main/Header";
+import Header from "../../components/Header";
 import {useCookies} from "react-cookie";
 import {auth} from "../../utils/backendClient";
 import {useNavigate} from "react-router-dom";

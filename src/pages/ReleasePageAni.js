@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import {ani_url, makeNormalList} from "../utils/anilibria";
-import Header from "../components/main/Header";
+import Header from "../components/Header";
 import {useCookies} from "react-cookie";
 import {changeFav, getFavStatus} from "../utils/backendClient";
 import Footer from "../components/main/Footer";

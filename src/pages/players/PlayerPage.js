@@ -2,11 +2,11 @@ import React, {useEffect, useRef, useState} from 'react';
 import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import SockJS from 'sockjs-client';
-import {Client, Message} from '@stomp/stompjs';
+import {Client} from '@stomp/stompjs';
 import {api_url, compressString, makeNormalList} from "../../utils/anilibria";
 import ReactHlsPlayer from "react-hls-player";
 import {useCookies} from "react-cookie";
-import {beUrl, getEpisodeTime} from "../../utils/backendClient";
+import {getEpisodeTime} from "../../utils/backendClient";
 import {calcEpisodeDone} from "../../utils/simple";
 import GlobalMessageReceiver from "../../components/other/GlobalMessageReceiver";
 
