@@ -1,0 +1,21 @@
+.main_page_title {
+    font-size: 70px;
+    margin-bottom: 5px;
+}
+
+.backgroundCustom {
+    /*background-image: url('https://images.pling.com/img/00/00/62/69/92/1730410/anime-forest-011.jpg');*/
+    background-image: url('https://i.imgur.com/3X3yJ9N.jpg');
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+.main_page_desc {
+    width: 100%;
+    margin-top: 0;
+}
+
+.go_reg {
+    width: 100%;
+    margin-top: 15px;
+}

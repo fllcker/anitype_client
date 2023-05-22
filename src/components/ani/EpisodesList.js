@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {getStringOfQualities, makeNormalList} from "../utils/anilibria";
-import EpisodeLine from "./EpisodeLine";
+import {getStringOfQualities} from "../../utils/anilibria";
+import EpisodeLineAni from "./EpisodeLineAni";
 import {useCookies} from "react-cookie";
-import axios from "axios";
-import {beUrl, getEpisodesViewsByRelease} from "../utils/beClient";
-import {getCompletedEpisodes} from "../utils/simple";
-import ChoosePlayer from "./ChoosePlayer";
+import {getEpisodesViewsByRelease} from "../../utils/backendClient";
+import {getCompletedEpisodes} from "../../utils/simple";
 
 const EpisodesList = ({list, releaseId}) => {
     const [cookies] = useCookies(['access'])
@@ -33,7 +31,7 @@ const EpisodesList = ({list, releaseId}) => {
                 </h1>
 
                 {
-                    list?.map(el => <EpisodeLine
+                    list?.map(el => <EpisodeLineAni
                         key={el?.episode}
                         index={el?.episode}
                         qualities={getStringOfQualities(el?.hls)}

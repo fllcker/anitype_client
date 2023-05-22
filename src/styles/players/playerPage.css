@@ -1,0 +1,23 @@
+.reacthlsplayer2 {
+    width: 100%;
+    height: auto;
+
+    max-height: 600px;
+}
+
+.player_page_controls_down {
+
+
+    margin-top: 20px;
+}
+
+.player_pae_controls_buttons {
+    display: flex;
+    align-items: center;
+}
+
+.controls_episode_title {
+    color: #97af9f;
+
+    word-break: break-all;
+}

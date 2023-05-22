@@ -1,0 +1,32 @@
+
+.player_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-height: 100vh;
+    overflow-y: hidden;
+
+}
+
+.player_page_controls {
+    background: #111;
+    display: flex;
+
+    padding: 10px 0 10px 0;
+
+    overflow-x: hidden;
+}
+
+.player_page_controls button {
+    padding: 12px 30px;
+}
+
+.player_page_controls button {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.controls_title {
+    margin-right: 20px;
+}

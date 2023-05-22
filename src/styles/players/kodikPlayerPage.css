@@ -1,0 +1,9 @@
+.player2_page_controls {
+    flex-direction: column;
+    padding: 0;
+    text-align: center;
+}
+
+.player2_page_controls h1 {
+    margin-bottom: 0;
+}

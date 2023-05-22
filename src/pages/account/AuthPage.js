@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../components/Header";
+import Header from "../../components/main/Header";
 import {useCookies} from "react-cookie";
-import axios from "axios";
-import {auth} from "../utils/beClient";
+import {auth} from "../../utils/backendClient";
 import {useNavigate} from "react-router-dom";
 
 const AuthPage = ({defMode = 'reg'}) => {

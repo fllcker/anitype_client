@@ -1,9 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/main/Header";
+import Footer from "../../components/main/Footer";
 import axios from "axios";
-import {Link, useNavigate, useParams} from "react-router-dom";
-import {beUrl} from "../utils/beClient";
+import {Link, useParams} from "react-router-dom";
+import {beUrl} from "../../utils/backendClient";
 import {useCookies} from "react-cookie";
 
 const VerificationPage = () => {

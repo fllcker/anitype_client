@@ -1,0 +1,25 @@
+.episode_line {
+    padding: 0 35px;
+
+    border: 1px solid #222;
+    border-radius: 20px;
+
+    margin-bottom: 10px;
+
+    transition: .2s;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.episode_line:hover {
+    background: #171717;
+
+}
+
+.episode_line_qualities {
+    color: #9b9b9b;
+    font-size: 12px;
+}

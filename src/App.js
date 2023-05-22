@@ -1,29 +1,41 @@
-import TestPage from "./pages/TestPage";
 import {Route, Routes} from "react-router-dom";
 import SearchPage from "./pages/SearchPage";
-import ReleasePage from "./pages/ReleasePage";
-import PlayerPage from "./pages/PlayerPage";
+import ReleasePageAni from "./pages/ReleasePageAni";
+import PlayerPage from "./pages/players/PlayerPage";
 import MainPage from "./pages/MainPage";
 import LastReleasesPage from "./pages/LastReleasesPage";
-import RandomReleaseFunc from "./pages/RandomReleaseFunc";
-import AuthPage from "./pages/AuthPage";
-import FavPage from "./pages/FavPage";
-import AccountPage from "./pages/AccountPage";
+import AuthPage from "./pages/account/AuthPage";
+import FavPage from "./pages/account/FavPage";
+import AccountPage from "./pages/account/AccountPage";
 import AppDownloadPage from "./pages/AppDownloadPage";
 import HomePage from "./pages/HomePage";
-import FourOfFour from "./pages/FourOfFour";
-import KodikPlayerPage from "./pages/KodikPlayerPage";
-import PravoPage from "./pages/PravoPage";
-import AboutPage from "./pages/AboutPage";
-import VerificationPage from "./pages/VerificationPage";
+import FourOfFour from "./pages/other/FourOfFour";
+import KodikPlayerPage from "./pages/players/KodikPlayerPage";
+import PravoPage from "./pages/other/PravoPage";
+import AboutPage from "./pages/other/AboutPage";
+import VerificationPage from "./pages/account/VerificationPage";
+
+import './styles/index.css'
+import './styles/media.css'
+import './styles/main/footer.css'
+import './styles/main/mainPage.css'
+import './styles/main/header.css'
+import './styles/main/searchPage.css'
+import './styles/players/kodikPlayerPage.css'
+import './styles/players/playerPage.css'
+import './styles/players/main.css'
+import './styles/components/episodeLineAni.css'
+import './styles/components/lastReleaseAni.css'
+import './styles/components/episodeList.css'
+import './styles/ani/releasePage.css'
+import './styles/account/accountPage.css'
+import './styles/account/favPage.css'
+import './styles/account/authPage.css'
 
 function App() {
     return (
         <>
             <Routes>
-                <Route path="/test" element={<TestPage/>}/>
-
-
                 <Route path="/search">
                     <Route path=":query" element={<SearchPage/>}/>
                     <Route index element={<SearchPage/>}/>
@@ -31,7 +43,7 @@ function App() {
 
                 <Route path="/release">
                     <Route path=":id/play/:episode" element={<PlayerPage/>}/>
-                    <Route path=":id" element={<ReleasePage/>}/>
+                    <Route path=":id" element={<ReleasePageAni/>}/>
                 </Route>
 
                 <Route path="/player">
@@ -40,7 +52,6 @@ function App() {
                 </Route>
 
                 <Route path="/last" element={<LastReleasesPage/>}/>
-                <Route path="/random" element={<RandomReleaseFunc/>}/>
 
                 <Route path="/auth">
                     <Route index element={<AuthPage/>}/>

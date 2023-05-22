@@ -1,0 +1,36 @@
+.header {
+    padding: 15px 40px;
+    background: #222;
+
+    margin-bottom: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 3;
+}
+
+.search_input {
+    padding: 9px 20px;
+    margin-left: 20px;
+
+    background: transparent;
+    border: 1px solid #696969;
+    color: #b6b6b6;
+
+    transition: .2s;
+}
+
+.search_input::placeholder {
+    color: #b6b6b6;
+}
+
+.search_input:focus {
+    color: #dcdcdc;
+    border: 1px solid #9b9b9b;
+}
+
+.header_mob_search {
+    display: none;
+}

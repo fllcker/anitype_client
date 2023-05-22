@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import NoResultsBlock from "./NoResultsBlock";
 import HorizontalKodikAnimeLine from "./HorizontalAnimeLine";
 
 

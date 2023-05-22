@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
-import {ani_url, compressString} from "../utils/anilibria";
+import React from 'react';
+import {ani_url, compressString} from "../../utils/anilibria";
 import {useNavigate} from "react-router-dom";
-import ProxyImg from "./ProxyImg";
-import {removeDescAd} from "../utils/simple";
+import ProxyImg from "../ProxyImg";
+import {removeDescAd} from "../../utils/simple";
 
-const LastReleaseV = ({anime_info}) => {
+const LastReleaseAni = ({anime_info}) => {
     const nav = useNavigate()
 
     return (
@@ -21,4 +21,4 @@ const LastReleaseV = ({anime_info}) => {
     );
 };
 
-export default LastReleaseV;
+export default LastReleaseAni;

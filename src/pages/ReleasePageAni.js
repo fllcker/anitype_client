@@ -1,19 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useNavigate, useParams} from "react-router-dom";
-import axios from "axios";
-import {ani_url, api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../utils/anilibria";
-import EpisodeLine from "../components/EpisodeLine";
-import Header from "../components/Header";
+import {useNavigate, useParams} from "react-router-dom";
+import {ani_url, makeNormalList} from "../utils/anilibria";
+import Header from "../components/main/Header";
 import {useCookies} from "react-cookie";
-import {changeFav, getFavStatus} from "../utils/beClient";
-import Footer from "../components/Footer";
+import {changeFav, getFavStatus} from "../utils/backendClient";
+import Footer from "../components/main/Footer";
 import ProxyImg from "../components/ProxyImg";
-import EpisodesList from "../components/EpisodesList";
-import {getAnimeById} from "../utils/alClient";
+import EpisodesList from "../components/ani/EpisodesList";
+import {getAnimeById} from "../utils/anilibriaClient";
 import ChoosePlayer from "../components/ChoosePlayer";
 import {getCurrentPlayerString, removeDescAd} from "../utils/simple";
 
-const ReleasePage = () => {
+const ReleasePageAni = () => {
     const params = useParams();
     const nav = useNavigate();
     const [cookies] = useCookies(['access', 'player'])
@@ -53,7 +51,8 @@ const ReleasePage = () => {
                     <div className="release_content">
                         <div className="release_content_poster">
                             {anime_info?.posters?.small &&
-                                <ProxyImg url={ani_url + anime_info?.posters?.small?.url} alt={anime_info?.names?.ru} classes={"release_page_image"}/>
+                                <ProxyImg url={ani_url + anime_info?.posters?.small?.url} alt={anime_info?.names?.ru}
+                                          classes={"release_page_image"}/>
                             }
 
                         </div>
@@ -76,7 +75,8 @@ const ReleasePage = () => {
                                 {
                                     cookies.access &&
                                     <>
-                                        <span className="span_button" onClick={() => changeFav(cookies.access, params?.id, !faved, setFaved)}>{faved ? 'Убрать из избранного' : 'Добавить в избранное'}</span>
+                                        <span className="span_button"
+                                              onClick={() => changeFav(cookies.access, params?.id, !faved, setFaved)}>{faved ? 'Убрать из избранного' : 'Добавить в избранное'}</span>
                                         <span className="span_button">Отметить просмотренным</span>
                                     </>
                                 }
@@ -85,10 +85,12 @@ const ReleasePage = () => {
                                     <p>Сейчас у вас {
                                         getCurrentPlayerString(cookies.player)
                                     } плеер</p>
-                                    <button className="rcpbb" onClick={() => setChoosePlayerWind(true)}>Выбрать плеер</button>
+                                    <button className="rcpbb" onClick={() => setChoosePlayerWind(true)}>Выбрать плеер
+                                    </button>
 
                                     {
-                                        +cookies.player === 2 && <button className="rcpbb kodik_watch_button" onClick={goToKodik}>Смотреть</button>
+                                        +cookies.player === 2 && <button className="rcpbb kodik_watch_button"
+                                                                         onClick={goToKodik}>Смотреть</button>
                                     }
 
 
@@ -99,7 +101,7 @@ const ReleasePage = () => {
 
                     {
                         (!cookies.player || cookies.player === '' || +cookies.player === 1) &&
-                            <EpisodesList list={makeNormalList(anime_info?.player?.list)} releaseId={params?.id}/>
+                        <EpisodesList list={makeNormalList(anime_info?.player?.list)} releaseId={params?.id}/>
                     }
 
                 </div>
@@ -110,4 +112,4 @@ const ReleasePage = () => {
     );
 };
 
-export default ReleasePage;
+export default ReleasePageAni;

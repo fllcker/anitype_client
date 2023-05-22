@@ -1,0 +1,54 @@
+.last_release_v {
+    border-radius: 20px;
+    overflow: hidden;
+
+    transition: .2s;
+
+    cursor: pointer;
+
+    color: transparent;
+
+    margin-top: 10px;
+    margin-right: 20px;
+
+    /*min-height: 500px;*/
+    min-width: 250px;
+    min-height: 357px;
+    background: #222;
+}
+
+.last_release_v:hover {
+    color: #989898;
+
+}
+
+.last_release_v:hover img {
+    opacity: 0.1;
+    color: red;
+}
+
+.last_release_v_poster {
+    max-width: 250px;
+    width: 250px;
+
+
+    transition: .2s;
+}
+
+.last_release_text {
+    position: absolute;
+    margin: 30px;
+    max-width: 190px;
+    word-break: break-word;
+
+    max-height: 290px;
+    overflow-y: hidden;
+
+}
+
+.last_release_text_desc {
+    font-weight: normal;
+    margin-top: 5px;
+
+    font-size: 14px;
+}
