@@ -41,9 +41,12 @@ const Header = ({selected = ''}) => {
                     </div>
                     <Link to="/search" className={selected === 'search' ? 'active header_mob_search' : 'header_mob_search'}>Поиск</Link>
 
-                    <HeaderSearch/>
-
                 </div>
+
+                <div className="header_search">
+                    <HeaderSearch/>
+                </div>
+
                 <div className="header_right">
                     { cookies.username &&
                             <Link to="/favourite" className={selected === 'fav' ? 'active' : ''}>Избранное</Link> }
