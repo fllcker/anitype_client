@@ -17,6 +17,7 @@
 }
 
 @media (max-width: 1000px) {
+
     .main_footer_abs {
         display: none;
     }
@@ -26,6 +27,7 @@
     .header {
         display: none;
     }
+
     .no1000 {
         display: none;
     }
