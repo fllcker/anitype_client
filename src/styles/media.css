@@ -17,6 +17,15 @@
 }
 
 @media (max-width: 1000px) {
+
+    .appLink {
+        display: none;
+    }
+
+    .searchLink {
+        left: 0;
+    }
+
     .no1000 {
         display: none;
     }
