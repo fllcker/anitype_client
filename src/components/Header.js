@@ -5,6 +5,7 @@ import {useCookies} from "react-cookie";
 import GlobalMessageReceiver from "./GlobalMessageReceiver";
 
 const Header = ({selected = ''}) => {
+    
     let [cookies] = useCookies(['username'])
 
     useEffect(() => {

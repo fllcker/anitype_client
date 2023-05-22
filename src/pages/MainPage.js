@@ -2,9 +2,13 @@ import React, {useEffect} from 'react';
 import Header from "../components/Header";
 import {useNavigate} from "react-router-dom";
 import ParticlesComp from "../components/ParticlesComp";
+import { useCookies } from 'react-cookie';
 
 const MainPage = () => {
+
     let nav = useNavigate()
+
+    const [cookies] = useCookies()
 
     return (
         <>
@@ -20,9 +24,17 @@ const MainPage = () => {
                     </h1>
                     <p className="main_page_desc">Огромное количество релизов с озвучкой от AniLibria, современный дизайн и не только, зарегистрируйся прямо сейчас</p>
 
-                    <div className="go_reg">
-                        <button onClick={() => nav('/auth/signup')}>Зарегистрироваться</button>
-                    </div>
+                    {
+                        cookies.username ? (
+                            <div className="go_reg">
+                                <button onClick={() => nav('/last')}>Перейти к просмотру</button>
+                            </div>
+                        ) : (
+                            <div className="go_reg">
+                                <button onClick={() => nav('/auth/signup')}>Зарегистрироваться</button>
+                            </div>
+                        )
+                    }
                 </div>
             </div>
 
