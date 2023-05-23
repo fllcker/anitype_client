@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from "../components/main/Header";
+import Header from "../components/Header";
 import Footer from "../components/main/Footer";
 
 const AppDownloadPage = () => {

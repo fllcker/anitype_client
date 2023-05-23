@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../../components/main/Header";
+import Header from "../../components/Header";
 import {getLastReleases} from "../../utils/anilibriaClient";
 import LastReleaseAni from "../../components/ani/LastReleaseAni";
 import Footer from "../../components/main/Footer";

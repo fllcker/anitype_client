@@ -3,7 +3,7 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import {ani_url, api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../../utils/anilibria";
 import EpisodeLineAni from "../../components/ani/EpisodeLineAni";
-import Header from "../../components/main/Header";
+import Header from "../../components/Header";
 import {useCookies} from "react-cookie";
 import {changeFav, getFavStatus} from "../../utils/backendClient";
 import Footer from "../../components/main/Footer";

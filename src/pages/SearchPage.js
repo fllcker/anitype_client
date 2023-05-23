@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../components/main/Header";
+import Header from "../components/Header";
 import {useParams} from "react-router-dom";
 import Footer from "../components/main/Footer";
 import {getSearch} from "../utils/anilibriaClient";

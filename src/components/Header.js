@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import {Link, useNavigate} from "react-router-dom";
-import HeaderSearch from "./HeaderSearch";
+import HeaderSearch from "./main/HeaderSearch";
 import {useCookies} from "react-cookie";
-import GlobalMessageReceiver from "../other/GlobalMessageReceiver";
+import GlobalMessageReceiver from "./other/GlobalMessageReceiver";
 
 const Header = ({selected = ''}) => {
     let [cookies] = useCookies(['username'])

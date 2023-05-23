@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../../components/main/Header";
+import Header from "../../components/Header";
 import {useCookies} from "react-cookie";
 import axios from "axios";
 import {auth} from "../../utils/backendClient";

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../../components/main/Header";
+import Header from "../../components/Header";
 import {getFavs} from "../../utils/backendClient";
 import {useCookies} from "react-cookie";
 import {getCurrentReleases} from "../../utils/anilibriaClient";
