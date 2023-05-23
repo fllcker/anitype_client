@@ -30,7 +30,6 @@ const SearchPage = () => {
     }
 
     const goSearchAni = () => {
-        if (query === '') return;
 
         getSearch(query)
             .then(r => {
@@ -40,7 +39,6 @@ const SearchPage = () => {
     }
 
     const goSearchKodik = () => {
-        if (query === '') return;
 
         getSearchKodik(query)
             .then(r => {
