@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Header from "../../components/Header";
+import Footer from "../../components/main/Footer";
 import {useNavigate} from "react-router-dom";
 import {useCookies} from "react-cookie";
 import axios from "axios";
-import {beUrl} from "../utils/beClient";
+import {beUrl} from "../../utils/backendClient";
 
 const AccountPage = () => {
     const nav = useNavigate();

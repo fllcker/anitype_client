@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import axios from "axios";
-import {api_url, compressString, makeNormalList} from "../utils/anilibria";
+import {api_url, compressString, makeNormalList} from "../../utils/anilibria";
 import {Link, useParams} from "react-router-dom";
 
 const KodikPlayerPage = () => {

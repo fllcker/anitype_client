@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
 import ParticlesComp from "../components/ParticlesComp";
@@ -8,7 +8,7 @@ const MainPage = () => {
 
     let nav = useNavigate()
 
-    const [cookies] = useCookies()
+    const [cookies] = useCookies(['username'])
 
     return (
         <>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
 
-const EpisodeLine = ({index, qualities, completed = false}) => {
+const EpisodeLineAni = ({index, qualities, completed = false}) => {
     const nav = useNavigate()
 
     const go = () => {
@@ -16,4 +16,4 @@ const EpisodeLine = ({index, qualities, completed = false}) => {
     );
 };
 
-export default EpisodeLine;
+export default EpisodeLineAni;

@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../components/Header";
-import {getLastReleases} from "../utils/alClient";
-import LastReleaseV from "../components/LastReleaseV";
-import Footer from "../components/Footer";
-import MainFooter from "../components/MainFooter";
+import Header from "../../components/Header";
+import {getLastReleases} from "../../utils/anilibriaClient";
+import LastReleaseAni from "../../components/ani/LastReleaseAni";
+import Footer from "../../components/main/Footer";
+import MainFooter from "../../components/main/MainFooter";
 
-const LastReleasesPage = () => {
+const LastReleasesPageAni = () => {
     const [releases, setReleases] = useState([])
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const LastReleasesPage = () => {
 
                     <div className="releases_items">
                         {
-                            releases?.map(el => <LastReleaseV anime_info={el} key={el?.id}/>)
+                            releases?.map(el => <LastReleaseAni anime_info={el} key={el?.id}/>)
                         }
                     </div>
                 </div>
@@ -34,4 +34,4 @@ const LastReleasesPage = () => {
     );
 };
 
-export default LastReleasesPage;
+export default LastReleasesPageAni;

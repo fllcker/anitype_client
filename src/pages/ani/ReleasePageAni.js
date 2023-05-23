@@ -1,19 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
-import {ani_url, api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../utils/anilibria";
-import EpisodeLine from "../components/EpisodeLine";
-import Header from "../components/Header";
+import {ani_url, api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../../utils/anilibria";
+import EpisodeLineAni from "../../components/ani/EpisodeLineAni";
+import Header from "../../components/Header";
 import {useCookies} from "react-cookie";
-import {changeFav, getFavStatus} from "../utils/beClient";
-import Footer from "../components/Footer";
-import ProxyImg from "../components/ProxyImg";
-import EpisodesList from "../components/EpisodesList";
-import {getAnimeById} from "../utils/alClient";
-import ChoosePlayer from "../components/ChoosePlayer";
-import {getCurrentPlayerString, removeDescAd} from "../utils/simple";
+import {changeFav, getFavStatus} from "../../utils/backendClient";
+import Footer from "../../components/main/Footer";
+import ProxyImg from "../../components/other/ProxyImg";
+import EpisodesListAni from "../../components/ani/EpisodesListAni";
+import {getAnimeById} from "../../utils/anilibriaClient";
+import ChoosePlayer from "../../components/ChoosePlayer";
+import {getCurrentPlayerString, removeDescAd} from "../../utils/simple";
 
-const ReleasePage = () => {
+const ReleasePageAni = () => {
     const params = useParams();
     const nav = useNavigate();
     const [cookies] = useCookies(['access', 'player'])
@@ -99,7 +99,7 @@ const ReleasePage = () => {
 
                     {
                         (!cookies.player || cookies.player === '' || +cookies.player === 1) &&
-                            <EpisodesList list={makeNormalList(anime_info?.player?.list)} releaseId={params?.id}/>
+                            <EpisodesListAni list={makeNormalList(anime_info?.player?.list)} releaseId={params?.id}/>
                     }
 
                 </div>
@@ -110,4 +110,4 @@ const ReleasePage = () => {
     );
 };
 
-export default ReleasePage;
+export default ReleasePageAni;

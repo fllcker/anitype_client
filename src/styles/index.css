@@ -86,6 +86,7 @@ button:disabled:hover {
     position: fixed;
     bottom: 0;
     width: 100%;
+  z-index: 3;
 }
 
 .mob_menu a {
@@ -639,6 +640,7 @@ h1 {
 .main_page_title {
   font-size: 70px;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .backgroundvideo{
@@ -661,6 +663,7 @@ h1 {
 
 .main_page_desc {
   margin-top: 0;
+  text-align: center;
 }
 
 .go_reg {
