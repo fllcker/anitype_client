@@ -17,7 +17,19 @@ const HeaderSearch = () => {
     }
 
     return (
-        <input type="text" placeholder="Поиск" className="search_input header_search_mobile_no_display" onKeyDown={handleKeyDown} onBlur={next} value={input} onChange={e => setInput(e.target.value)}/>
+        <>
+            <img alt='search' className='searchIcon' src='https://bit.ly/43E8Tnl'></img>
+            <input 
+                type="text" 
+                placeholder="Поиск" 
+                className="search_input header_search_mobile_no_display" 
+                onKeyDown={handleKeyDown} 
+                onBlur={next} 
+                value={input} 
+                onChange={e => setInput(e.target.value)}
+            >
+            </input>
+        </>
     );
 };
 

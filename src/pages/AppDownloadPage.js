@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from "../components/main/Header";
 import Footer from "../components/main/Footer";
+import HeaderNew from '../components/HeaderNew';
 
 const AppDownloadPage = () => {
     return (
         <>
-            <Header selected='app'/>
+            <HeaderNew selected='app'/>
 
             <div className="page download_app_page">
                 <div className="page_content">

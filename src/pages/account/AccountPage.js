@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../../components/main/Header";
 import Footer from "../../components/main/Footer";
 import {useNavigate} from "react-router-dom";
 import {useCookies} from "react-cookie";
 import axios from "axios";
 import {beUrl} from "../../utils/backendClient";
+import HeaderNew from '../../components/HeaderNew';
 
 const AccountPage = () => {
     const nav = useNavigate();
@@ -56,7 +56,7 @@ const AccountPage = () => {
 
     return (
         <>
-            <Header selected='account'/>
+            <HeaderNew selected='account'/>
 
             <div className="page">
                 <div className="page_content">

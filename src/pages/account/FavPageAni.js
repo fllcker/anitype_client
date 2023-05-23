@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../../components/main/Header";
 import {getFavs} from "../../utils/backendClient";
 import {useCookies} from "react-cookie";
 import {getCurrentReleases} from "../../utils/anilibriaClient";
 import LastReleaseAni from "../../components/ani/LastReleaseAni";
 import Footer from "../../components/main/Footer";
+import HeaderNew from '../../components/HeaderNew';
 
 const FavPageAni = () => {
     let [cookies] = useCookies(['access'])
@@ -25,7 +25,7 @@ const FavPageAni = () => {
 
     return (
         <>
-            <Header selected="fav"/>
+            <HeaderNew selected="fav"/>
 
             <div className="page">
                 <div className="page_content">

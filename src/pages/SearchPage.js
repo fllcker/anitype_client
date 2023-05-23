@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../components/main/Header";
 import {useParams} from "react-router-dom";
 import Footer from "../components/main/Footer";
 import {getSearch} from "../utils/anilibriaClient";
@@ -8,6 +7,7 @@ import {getSearchKodik} from "../utils/kodikClient";
 import {removeDuplicatesByTitleOrig} from "../utils/simple";
 import SearchPageResultsKodik from "../components/kodik/SearchPageResultsKodik";
 import MainFooter from "../components/main/MainFooter";
+import HeaderNew from '../components/HeaderNew';
 
 const SearchPage = () => {
     let [source, setSource] = useState('kodik')
@@ -75,7 +75,7 @@ const SearchPage = () => {
 
     return (
         <>
-            <Header selected='search'/>
+            <HeaderNew selected='search'/>
             <div className="page">
                 <div className="page_content">
                     <h1>Поиск</h1>

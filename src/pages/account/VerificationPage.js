@@ -5,6 +5,7 @@ import axios from "axios";
 import {Link, useNavigate, useParams} from "react-router-dom";
 import {beUrl} from "../../utils/backendClient";
 import {useCookies} from "react-cookie";
+import HeaderNew from '../../components/HeaderNew';
 
 const VerificationPage = () => {
     let [result, setResult] = useState('')
@@ -38,7 +39,7 @@ const VerificationPage = () => {
 
     return (
         <>
-            <Header/>
+            <HeaderNew />
 
             <div className="page">
                 <div className="page_content">

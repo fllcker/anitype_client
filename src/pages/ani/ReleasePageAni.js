@@ -3,7 +3,6 @@ import {Link, useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import {ani_url, api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../../utils/anilibria";
 import EpisodeLineAni from "../../components/ani/EpisodeLineAni";
-import Header from "../../components/main/Header";
 import {useCookies} from "react-cookie";
 import {changeFav, getFavStatus} from "../../utils/backendClient";
 import Footer from "../../components/main/Footer";
@@ -12,6 +11,7 @@ import EpisodesListAni from "../../components/ani/EpisodesListAni";
 import {getAnimeById} from "../../utils/anilibriaClient";
 import ChoosePlayer from "../../components/ChoosePlayer";
 import {getCurrentPlayerString, removeDescAd} from "../../utils/simple";
+import HeaderNew from '../../components/HeaderNew';
 
 const ReleasePageAni = () => {
     const params = useParams();
@@ -44,7 +44,7 @@ const ReleasePageAni = () => {
 
     return (
         <>
-            <Header/>
+            <HeaderNew />
 
             <ChoosePlayer display={choosePlayerWind} setDisplay={setChoosePlayerWind}/>
 

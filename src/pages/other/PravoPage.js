@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from "../../components/main/Header";
 import Footer from "../../components/main/Footer";
+import HeaderNew from '../../components/HeaderNew';
 
 const PravoPage = () => {
     return (
         <>
-            <Header/>
+            <HeaderNew/>
 
             <div className="page">
                 <div className="page_content">

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../../components/main/Header";
 import {getLastReleases} from "../../utils/anilibriaClient";
 import LastReleaseAni from "../../components/ani/LastReleaseAni";
 import Footer from "../../components/main/Footer";
 import MainFooter from "../../components/main/MainFooter";
+import HeaderNew from '../../components/HeaderNew';
 
 const LastReleasesPageAni = () => {
     const [releases, setReleases] = useState([])
@@ -14,7 +14,7 @@ const LastReleasesPageAni = () => {
 
     return (
         <>
-            <Header selected='last_releases'/>
+            <HeaderNew selected='last_releases'/>
 
             <div className="page">
                 <div className="page_content">

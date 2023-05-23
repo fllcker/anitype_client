@@ -1,5 +1,5 @@
-import React from 'react';
-import Header from "../components/main/Header";
+import React, {useEffect} from 'react';
+import HeaderNew from "../components/HeaderNew";
 import {useNavigate} from "react-router-dom";
 import ParticlesComp from "../components/other/ParticlesComp";
 
@@ -10,8 +10,7 @@ const MainPage = () => {
         <>
 
             <ParticlesComp />
-
-            <Header selected='home' />
+            <HeaderNew selected='home'/>
 
             <div className="page">
                 <div className="page_content">

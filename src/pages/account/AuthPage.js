@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../../components/main/Header";
 import {useCookies} from "react-cookie";
 import axios from "axios";
 import {auth} from "../../utils/backendClient";
 import {useNavigate} from "react-router-dom";
+import HeaderNew from '../../components/HeaderNew';
 
 const AuthPage = ({defMode = 'reg'}) => {
     let [cookies, setCookie] = useCookies(['username', 'access', 'countOfPosts'])
@@ -82,7 +82,7 @@ const AuthPage = ({defMode = 'reg'}) => {
 
     return (
         <>
-            <Header selected='auth'/>
+            <HeaderNew selected='auth'/>
 
             <div className="page">
                 <div className="page_content auth_page_content">
