@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import {getStringOfQualities, makeNormalList} from "../../utils/anilibria";
+import {getStringOfQualities} from "../../utils/anilibria";
 import EpisodeLineAni from "./EpisodeLineAni";
 import {useCookies} from "react-cookie";
-import axios from "axios";
-import {beUrl, getEpisodesViewsByRelease} from "../../utils/backendClient";
-import {getCompletedEpisodes} from "../../utils/simple";
-import ChoosePlayer from "../ChoosePlayer";
 
-const EpisodesListAni = ({list, releaseId}) => {
+import { getEpisodesViewsByRelease} from "../../utils/backendClient";
+import {getCompletedEpisodes} from "../../utils/simple";
+
+
+const EpisodesListAni = ({list, releaseId, player}) => {
     const [cookies] = useCookies(['access'])
 
     const [completedArray, setCompletedArray] = useState([])
@@ -21,7 +21,7 @@ const EpisodesListAni = ({list, releaseId}) => {
             })
             .catch(e => console.error(e))
 
-    }, [releaseId])
+    }, [cookies.access, releaseId])
 
     return (
         <>
@@ -38,6 +38,7 @@ const EpisodesListAni = ({list, releaseId}) => {
                         index={el?.episode}
                         qualities={getStringOfQualities(el?.hls)}
                         completed={completedArray.includes(el?.episode)}
+                        player={player}
                     />)
                 }
 

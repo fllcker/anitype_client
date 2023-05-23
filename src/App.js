@@ -14,6 +14,7 @@ import KodikPlayerPage from "./pages/kodik/KodikPlayerPage";
 import PravoPage from "./pages/other/PravoPage";
 import AboutPage from "./pages/other/AboutPage";
 import VerificationPage from "./pages/account/VerificationPage";
+import SecondPlayerPage from "./pages/ani/SecondPlayerPage";
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/release">
                     <Route path=":id/play/:episode" element={<PlayerPage/>}/>
                     <Route path=":id" element={<ReleasePageAni/>}/>
+                    <Route path=":id/play2/:episode" element={<SecondPlayerPage/>}/>
                 </Route>
 
                 <Route path="/player">

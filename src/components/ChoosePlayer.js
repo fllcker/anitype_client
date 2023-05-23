@@ -22,6 +22,12 @@ const ChoosePlayer = ({display = false, setDisplay}) => {
                                 setDisplay(false)
                             }}>Стандартный</div>
                             <div className="choose_player_list_el" onClick={() => {
+                                setCookie('player', 3, {
+                                    maxAge: 123123123
+                                })
+                                setDisplay(false)
+                            }}>Дополнительный</div>
+                            <div className="choose_player_list_el" onClick={() => {
                                 setCookie('player', 2, {
                                     maxAge: 123123123
                                 })
