@@ -12,7 +12,7 @@ const NoResultsBlock = ({query, result}) => {
             }
 
             {
-                (query === '') &&
+                (query === '' && !result) &&
                 <div className="release_items_null">
                     <p className="release_items_null_h1">{'<-'}</p>
 
