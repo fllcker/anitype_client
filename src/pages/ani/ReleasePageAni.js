@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useNavigate, useParams} from "react-router-dom";
-import axios from "axios";
-import {ani_url, api_url, compressString, getPoster, getStringOfQualities, makeNormalList} from "../../utils/anilibria";
-import EpisodeLineAni from "../../components/ani/EpisodeLineAni";
+import { useNavigate, useParams} from "react-router-dom";
+import {ani_url, makeNormalList} from "../../utils/anilibria";
 import Header from "../../components/main/Header";
 import {useCookies} from "react-cookie";
 import {changeFav, getFavStatus} from "../../utils/backendClient";
@@ -28,14 +26,14 @@ const ReleasePageAni = () => {
             .then(r => {
                 setAnimeInfo(r.data)
             })
-            .catch(e => nav('/search'))
+            .catch(() => nav('/search'))
 
         if (cookies.access) {
             getFavStatus(cookies.access, params?.id)
                 .then(res => setFaved(res.data))
                 .catch(e => console.error(e))
         }
-    }, [params?.id])
+    }, [cookies.access, nav, params?.id])
 
     const goToKodik = () => {
         console.log(anime_info.code)
@@ -98,8 +96,8 @@ const ReleasePageAni = () => {
                     </div>
 
                     {
-                        (!cookies.player || cookies.player === '' || +cookies.player === 1) &&
-                            <EpisodesListAni list={makeNormalList(anime_info?.player?.list)} releaseId={params?.id}/>
+                        (!cookies.player || cookies.player === '' || +cookies.player === 1  || +cookies.player === 3) &&
+                            <EpisodesListAni list={makeNormalList(anime_info?.player?.list)} releaseId={params?.id} player={+cookies.player}/>
                     }
 
                 </div>
