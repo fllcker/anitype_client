@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import {useParams} from "react-router-dom";
-import Footer from "../components/main/Footer";
-import {getSearch} from "../utils/anilibriaClient";
-import SearchPageResultsAni from "../components/ani/SearchPageResultsAni";
-import {getSearchKodik} from "../utils/kodikClient";
-import {removeDuplicatesByTitleOrig} from "../utils/simple";
-import SearchPageResultsKodik from "../components/kodik/SearchPageResultsKodik";
-import MainFooter from "../components/main/MainFooter";
+import Footer from "../../components/main/Footer";
+import {getSearch} from "../../utils/anilibriaClient";
+import SearchPageResultsAni from "../../components/ani/SearchPageResultsAni";
+import {getSearchKodik} from "../../utils/kodikClient";
+import {removeDuplicatesByTitleOrig} from "../../utils/simple";
+import SearchPageResultsKodik from "../../components/kodik/SearchPageResultsKodik";
+import MainFooter from "../../components/main/MainFooter";
 
 const SearchPage = () => {
     let [source, setSource] = useState('kodik')

@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import Header from "../../components/Header";
-import {getLastReleases} from "../../utils/anilibriaClient";
-import LastReleaseAni from "../../components/ani/LastReleaseAni";
-import Footer from "../../components/main/Footer";
-import MainFooter from "../../components/main/MainFooter";
+import Header from "../../../components/Header";
+import {getLastReleases} from "../../../utils/anilibriaClient";
+import LastReleaseAni from "../../../components/ani/LastReleaseAni";
+import Footer from "../../../components/main/Footer";
+import MainFooter from "../../../components/main/MainFooter";
 
 const LastReleasesPageAni = () => {
     const [releases, setReleases] = useState([])

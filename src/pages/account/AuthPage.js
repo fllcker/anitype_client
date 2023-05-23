@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Header from "../../components/Header";
 import {useCookies} from "react-cookie";
-import axios from "axios";
 import {auth} from "../../utils/backendClient";
 import {useNavigate} from "react-router-dom";
 

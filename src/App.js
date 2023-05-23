@@ -1,11 +1,11 @@
 import {Route, Routes} from "react-router-dom";
-import SearchPage from "./pages/SearchPage";
-import ReleasePageAni from "./pages/ani/ReleasePageAni";
-import PlayerPage from "./pages/ani/PlayerPage";
-import MainPage from "./pages/MainPage";
-import LastReleasesPageAni from "./pages/ani/LastReleasesPageAni";
+import SearchPage from "./legacy/pages/SearchPage";
+import ReleasePageAni from "./legacy/pages/ani/ReleasePageAni";
+import PlayerPage from "./legacy/pages/ani/PlayerPage";
+import MainPage from "./legacy/pages/MainPage";
+import LastReleasesPageAni from "./legacy/pages/ani/LastReleasesPageAni";
 import AuthPage from "./pages/account/AuthPage";
-import FavPageAni from "./pages/account/FavPageAni";
+import FavPageAni from "./legacy/pages/FavPageAni";
 import AccountPage from "./pages/account/AccountPage";
 import AppDownloadPage from "./pages/AppDownloadPage";
 import HomePage from "./pages/HomePage";
