@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from "../components/Header";
-import {useNavigate} from "react-router-dom";
-import ParticlesComp from "../components/other/ParticlesComp";
-import {useCookies} from "react-cookie";
+import { useNavigate } from "react-router-dom";
+import ParticlesComp from "../components/ParticlesComp";
+import { useCookies } from 'react-cookie';
 
 const MainPage = () => {
 
