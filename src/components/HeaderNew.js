@@ -26,16 +26,16 @@ const HeaderNew = ({ selected }) => {
 					cookies.username ? (
 						<>
 							<Link to='/favourite'>
-								<img className='favorite' alt='favorite' src='https://bit.ly/3MR0ebf'></img>
+								<img className='favorite' alt='favorite' src='https://i.imgur.com/gPfGmCs.png'></img>
 							</Link>
 
 							<Link to='/account'>
-								<img className='user_avatar' alt='avatar' src='https://bit.ly/45oczLr'></img>
+								<img className='user_avatar' alt='avatar' src='https://i.imgur.com/Sd2o9lQ.png'></img>
 							</Link>
 						</>
 					) : (
 						<Link to='/auth/signup'>
-							<img className='user_avatar' alt='avatar' src='https://bit.ly/45oczLr'></img>
+							<img className='user_avatar' alt='avatar' src='https://i.imgur.com/Sd2o9lQ.png'></img>
 						</Link>
 					)
 				}

@@ -18,7 +18,7 @@ const HeaderSearch = () => {
 
     return (
         <>
-            <img alt='search' className='searchIcon' src='https://bit.ly/43E8Tnl'></img>
+            <img alt='search' className='searchIcon' src='https://i.imgur.com/CKLftxO.png'></img>
             <input 
                 type="text" 
                 placeholder="Поиск" 
