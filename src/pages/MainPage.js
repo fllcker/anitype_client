@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
-import ParticlesComp from "../components/ParticlesComp";
 import { useCookies } from 'react-cookie';
 
 const MainPage = () => {
@@ -13,7 +12,6 @@ const MainPage = () => {
     return (
         <>
 
-            <ParticlesComp />
 
             <Header selected='home' />
 

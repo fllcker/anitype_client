@@ -29,7 +29,6 @@ const LastReleasesPageAni = () => {
             </div>
 
             <Footer/>
-            <MainFooter/>
         </>
     );
 };

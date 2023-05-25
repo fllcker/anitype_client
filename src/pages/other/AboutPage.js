@@ -1,7 +1,5 @@
 import React from 'react';
 import Header from "../../components/Header";
-import Footer from "../../components/main/Footer";
-
 const AboutPage = () => {
     return (
         <>
@@ -13,12 +11,12 @@ const AboutPage = () => {
 
                     <span>Telegram <a href="https://t.me/anitypenews">telegram</a></span>
                     <span>Discord <a href="https://discord.gg/RJqPpnQ3pT">discord</a></span>
+                    <span>TikTok <a href="https://www.tiktok.com/@skyfllcker">tiktok</a></span>
 
 
                 </div>
             </div>
 
-            <Footer/>
         </>
     );
 };

@@ -181,3 +181,34 @@
         background-size: cover;
     }
 }
+
+
+@media (max-width: 600px) {
+    .footer {
+      flex-direction: column; 
+      text-align: center;
+    }
+  
+    .social-icon__item,
+    .menu__item {
+      margin-bottom: 10px; 
+    }
+  
+    .social-icon__item_last {
+      margin-bottom: 10px;
+    }
+  
+    .site__title {
+      display: none;
+    }
+
+    .menu{
+        margin-left: 0px;
+    }
+    .social-icon {
+        margin-right: 0px;
+        margin-bottom: 0px;
+        flex-direction: row; 
+      }
+  }
+
