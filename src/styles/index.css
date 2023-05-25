@@ -20,6 +20,7 @@ body {
 
   display: flex;
   flex-direction: column;
+
 }
 
 ::-webkit-scrollbar {
@@ -86,7 +87,6 @@ button:disabled:hover {
     position: fixed;
     bottom: 0;
     width: 100%;
-  z-index: 3;
 }
 
 .mob_menu a {
@@ -176,8 +176,9 @@ h1 {
 .page {
   display: flex;
   justify-content: center;
-
+  height: 100%
 }
+
 
 .page_content {
   width: 60%;
@@ -640,7 +641,6 @@ h1 {
 .main_page_title {
   font-size: 70px;
   margin-bottom: 5px;
-  text-align: center;
 }
 
 .backgroundvideo{
@@ -663,7 +663,6 @@ h1 {
 
 .main_page_desc {
   margin-top: 0;
-  text-align: center;
 }
 
 .go_reg {
@@ -724,6 +723,20 @@ img {
 
 .windows {
   color: #5e5eff;
+}
+
+.anitype {
+  color: #5effa1;
+}
+
+
+
+.border{
+  padding: 10px;
+  border:2px solid white;
+  border-radius: 40px 10px;
+  margin-bottom: 25px;
+
 }
 
 .download_app_button_div {
@@ -1205,4 +1218,106 @@ img {
 .searchLink {
   position: relative;
   left: 50px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+
+.footer {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: #111;
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+
+.footer *{
+  padding: 0;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-icon__item {
+  margin-right: 25px;
+  list-style: none;
+}
+
+.social-icon__item_last {
+  list-style: none;
+}
+
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 5px; /* Изменено */
+  display: inline-block;
+  opacity: 0.75;
+}
+
+.social-icon__link:hover {
+  opacity: 1;
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.social-icon {
+  margin-right: 120px; /* Добавлено */
+}
+
+.menu {
+  margin-left: 120px; /* Добавлено */
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.footer img {
+  width: 40px;
+}
+
+
+.site__title {
+  color: #5effa1 !important;
+  margin: 10px 0 !important;
+  font-size: 1.6rem !important;
+  font-weight: 500 !important;
 }
