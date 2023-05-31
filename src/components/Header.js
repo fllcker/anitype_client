@@ -52,14 +52,8 @@ const Header = ({selected = ''}) => {
                 </div>
 
                 <div className="header_right">
-                    { cookies.username &&
-                            <Link to="/favourite" className={selected === 'fav' ? 'active' : ''}>Избранное</Link> }
-
-                    {
-                        cookies.username ?
-                            <Link to="/account" className={selected === 'account' ? 'active' : ''}>Аккаунт ({cookies.username})</Link> :
-                            <Link to="/auth/signin" className={selected === 'auth' ? 'active' : ''}>Авторизация</Link>
-                    }
+                    <Link to={"https://discord.gg/anitype"}>discord</Link>
+                    <Link to={"https://t.me/anitypenews"}>tg</Link>
                 </div>
             </div>
             {/* MOBILE MENU */}
@@ -82,21 +76,7 @@ const Header = ({selected = ''}) => {
             <span className="caption">Поиск</span>
         </div>
     </Link>
-    {
-        cookies.username ?
-            <Link to="/account" className={selected === 'account' ? 'active' : ''}>
-                <div>
-                    <img className={selected === 'account' ? 'selected_icon' : 'header_icon'} alt='icon' src='https://media.discordapp.net/attachments/1110187278447431800/1110240825406935091/icons8-user-96.png' />
-                    <span className="caption">Аккаунт</span>
-                </div>
-            </Link> :
-            <Link to="/auth/signin" className={selected === 'auth' ? 'active' : ''}>
-                <div>
-                    <img className={selected === 'auth' ? 'selected_icon' : 'header_icon'} alt='icon' src='https://media.discordapp.net/attachments/1110187278447431800/1110240825406935091/icons8-user-96.png' />
-                    <span className="caption">Вход</span>
-                </div>
-            </Link>
-    }
+
 </div>
 
         </>

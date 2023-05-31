@@ -73,13 +73,7 @@ const ReleasePageAni = () => {
                             </div>
 
                             <div className="release_content_info_down">
-                                {
-                                    cookies.access &&
-                                    <>
-                                        <span className="span_button" onClick={() => changeFav(cookies.access, params?.id, !faved, setFaved)}>{faved ? 'Убрать из избранного' : 'Добавить в избранное'}</span>
-                                        <span className="span_button">Отметить просмотренным</span>
-                                    </>
-                                }
+
 
                                 <div className="release_content_player_button">
                                     <p>Сейчас у вас {
